@@ -11908,4 +11908,18 @@ footer {
   width: 250px;
 }
 
+.search {
+  background: #B62F5C;
+  border-radius: 0 !important;
+}
+
+.search span {
+  border-radius: 0;
+}
+
+.search input {
+  max-width: 750px;
+  border-radius: 0;
+}
+
 /*# sourceMappingURL=index.css.map */

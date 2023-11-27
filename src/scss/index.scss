@@ -14,7 +14,7 @@ body {
 
 header,
 footer {
-    background-color: rgb(19, 31, 53, 0.85);
+    background-color: $header-color;
     min-width: 100%;
 }
 
@@ -57,4 +57,18 @@ footer {
 
 .footer-logo {
     width: 250px;
+}
+
+.search {
+    background: $secondary;
+    border-radius: 0 !important;
+}
+
+.search span {
+    border-radius: 0;
+}
+
+.search input {
+    max-width: 750px;
+    border-radius: 0;
 }

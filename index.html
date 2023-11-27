@@ -8,30 +8,51 @@
     <link rel="stylesheet" href="dist/css/index.css">
     <script src="https://kit.fontawesome.com/d2a33a8755.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <div>
-            <img src="images/mad bids(1).svg" alt="Mad Bids logo">
-            <h1>Madness Unleashed, Hatter's Style, Your Smile!</h1>
+<body class="m-0">
+    <header class="container d-flex justify-content-between align-items-center px-5 w-100">
+        <div class="m-3 mt-4">
+            <a href="index.html">
+                <img src="images/mad bids(1).svg" alt="Mad Bids logo" class="logo">
+            </a>
+            <h1 class="fs-5">Madness Unleashed, Hatter's Style, Your Smile!</h1>
         </div>
-        <!-- <nav>
-            <ul>
-                <li>Listings</li>
-                <li>Log In</li>
-                <li><i class="fa-regular fa-user"></i></li>
-            </ul>
-        </nav> -->
-        <nav>
-            <ul>
-                <li>Listings</li>
-                <a href="profile/index.html">
-                    <li>Profile</li>
-                </a>
-                <li>Log Out</li>
-                <li><img src="images/klobuk s kovanci.svg" alt="Icon for showing you the total"></li>
-                <li><img src="images/shutterstock_1362212747.jpg" alt="Profile avatar"></li>
-            </ul>
+        <nav class="navbar navbar-expand-md text-center align-items-center">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav gap-3 align-items-center">
+                        <li class="nav-item fs-5 text-transform">
+                            <a href="index.html" class="text-decoration-none">Listings</a>
+                        </li>
+                        <li class="nav-item fs-5 text-transform">
+                            <a href="sign-in/index.html" class="text-decoration-none">Log In</a>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-user fs-3"></i>
+                        </li>
+                    </ul>
+                </div>
         </nav>
+        <!-- <nav class="navbar navbar-expand-md text-center align-items-center">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav gap-3 align-items-center">
+                    <li class="nav-item fs-5 text-transform">
+                        <a href="index.html" class="text-decoration-none">Listings</a>
+                    </li>
+                    <li class="nav-item fs-5 text-transform">
+                        <a href="profile/index.html" class="text-decoration-none">Profile</a>
+                    </li>
+                    <li class="nav-item fs-5 text-transform">
+                        <a href="index.html" class="text-decoration-none">Log Out</a>
+                    </li>
+                    </a>
+                    <li class="nav-item fs-5 text-transform">
+                        <img src="images/klobuk s kovanci.svg" alt="Icon for showing you the total" class="total">
+                    </li>
+                    <li class="nav-item">
+                        <img src="images/shutterstock_1362212747.jpg" alt="Profile avatar" class="avatar">
+                    </li>
+                </ul>
+            </div>
+        </nav> -->
     </header>
     <main>
         <div>
@@ -119,7 +140,7 @@
             </div>
         </div> -->
     </main>
-    <footer>
+    <footer class="d-flex justify-content-between align-items-center">
         <div>
             <div>
                 <p>Contact us</p>
@@ -135,11 +156,13 @@
             </div>
             <div>
                 <p>Follow us</p>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook fs-2 me-3"></i>
+                <i class="fa-brands fa-instagram fs-2"></i>
             </div>
         </div>
-        <img src="images/shutterstock_1362212753druga barva.svg" alt="Mad Bids logo">
+        <a href="index.html">
+            <img src="images/shutterstock_1362212753druga barva.svg" alt="Mad Bids logo" class="footer-logo">
+        </a>
     </footer>
 </body>
 </html>

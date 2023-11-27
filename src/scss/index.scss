@@ -1,0 +1,60 @@
+@import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Poppins&family=Rokkitt&display=swap');
+
+// font-family: 'Crimson Text', serif;
+
+// font-family: 'Poppins', sans-serif;
+
+// font-family: 'Rokkitt', serif;
+
+body {
+    background-color: $light;
+}
+
+header,
+footer {
+    background-color: rgb(19, 31, 53, 0.85);
+    min-width: 100%;
+}
+
+.logo {
+    width: 300px;
+}
+
+h1 {
+    font-family: 'Rokkitt', serif;
+    font-weight: bold;
+}
+
+nav a {
+    font-family: 'Poppins', sans-serif;;
+}
+
+.avatar {
+    width: 80px;
+}
+
+.total {
+    width: 70px;
+}
+
+header a,
+h1,
+footer p,
+.fa-brands,
+.fa-regular {
+    color: $light;
+}
+
+ul {
+    text-transform: uppercase;
+}
+
+footer {
+    padding: 3% 8%;
+}
+
+.footer-logo {
+    width: 250px;
+}

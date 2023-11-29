@@ -27,7 +27,9 @@ h1 {
     font-weight: bold;
 }
 
-nav a {
+nav a,
+.cta,
+li {
     font-family: 'Poppins', sans-serif;;
 }
 
@@ -80,4 +82,17 @@ footer {
 
 .filter-options li {
     display: inline-block;
+}
+
+.cta {
+    background: $primary;
+    border-radius: 0;
+    filter: drop-shadow(0 0 0 transparent);
+}
+
+.cta:hover {
+    background: $info;
+    color: $light;
+    border: 1px solid transparent;
+    filter: drop-shadow(5px 5px 10px $dark);
 }

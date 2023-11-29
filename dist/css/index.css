@@ -11875,6 +11875,20 @@ h1, .h1 {
   font-weight: bold;
 }
 
+h2, .h2,
+h3,
+.h3 {
+  font-family: "Rokkitt", serif;
+  font-weight: 600;
+}
+
+p,
+small,
+.small {
+  font-family: "Crimson Text", serif;
+  color: #131F35;
+}
+
 nav a,
 .cta,
 li {
@@ -11944,6 +11958,57 @@ footer {
   color: #EAF3F6;
   border: 1px solid transparent;
   filter: drop-shadow(5px 5px 10px #131F35);
+}
+
+.card {
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex-grow: 1;
+}
+
+.card img {
+  width: 95%;
+  height: 200px;
+  border-radius: 0;
+}
+
+.card a {
+  color: #131F35;
+  text-decoration: none;
+}
+
+.listings-container div:nth-child(3n+1) > div {
+  border: 2px solid #03658C;
+  background-color: #EAF3F6;
+  transition: filter 0.5s ease-in-out;
+}
+
+.listings-container div:nth-child(3n+1):hover {
+  filter: drop-shadow(3px 3px 8px #03658C);
+}
+
+.listings-container div:nth-child(3n+2) > div {
+  border: 2px solid #FFDC13;
+  background-color: #EAF3F6;
+  transition: filter 0.5s ease-in-out;
+}
+
+.listings-container div:nth-child(3n+2):hover {
+  filter: drop-shadow(3px 3px 8px #FFDC13);
+}
+
+.listings-container div:nth-child(3n+3) > div {
+  border: 2px solid #B62F5C;
+  background-color: #EAF3F6;
+  transition: filter 0.5s ease-in-out;
+}
+
+.listings-container div:nth-child(3n+3):hover {
+  filter: drop-shadow(3px 3px 8px #B62F5C);
 }
 
 /*# sourceMappingURL=index.css.map */

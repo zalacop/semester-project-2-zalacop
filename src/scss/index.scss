@@ -27,6 +27,18 @@ h1 {
     font-weight: bold;
 }
 
+h2,
+h3 {
+    font-family: 'Rokkitt', serif;
+    font-weight: 600;
+}
+
+p,
+small {
+    font-family: 'Crimson Text', serif;
+    color: $dark;
+}
+
 nav a,
 .cta,
 li {
@@ -96,3 +108,55 @@ footer {
     border: 1px solid transparent;
     filter: drop-shadow(5px 5px 10px $dark);
 }
+
+.card {
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex-grow: 1;
+}
+
+.card img {
+    width: 95%;
+    height: 200px;
+    border-radius: 0;
+}
+
+.card a {
+    color: $dark;
+    text-decoration: none;
+}
+
+.listings-container div:nth-child(3n+1) > div {
+    border: 2px solid $info;
+    background-color: $light;
+    transition: filter 0.5s ease-in-out;
+}
+
+.listings-container div:nth-child(3n+1):hover {
+    filter: drop-shadow(3px 3px 8px $info);
+}
+
+.listings-container div:nth-child(3n+2) > div {
+    border: 2px solid $primary;
+    background-color: $light;
+    transition: filter 0.5s ease-in-out;
+}
+
+.listings-container div:nth-child(3n+2):hover {
+    filter: drop-shadow(3px 3px 8px $primary);
+}
+
+.listings-container div:nth-child(3n+3) > div {
+    border: 2px solid $secondary;
+    background-color: $light;
+    transition: filter 0.5s ease-in-out;
+}
+
+.listings-container div:nth-child(3n+3):hover {
+    filter: drop-shadow(3px 3px 8px $secondary);
+}
+

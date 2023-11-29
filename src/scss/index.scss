@@ -72,3 +72,12 @@ footer {
     max-width: 750px;
     border-radius: 0;
 }
+
+.filter-options {
+    background: $info;
+    color: $light;
+}
+
+.filter-options li {
+    display: inline-block;
+}

@@ -11922,4 +11922,13 @@ footer {
   border-radius: 0;
 }
 
+.filter-options {
+  background: #03658C;
+  color: #EAF3F6;
+}
+
+.filter-options li {
+  display: inline-block;
+}
+
 /*# sourceMappingURL=index.css.map */

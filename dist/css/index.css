@@ -11962,12 +11962,6 @@ footer {
 
 .card {
   border-radius: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-body {
-  flex-grow: 1;
 }
 
 .card img {
@@ -11981,33 +11975,37 @@ footer {
   text-decoration: none;
 }
 
-.listings-container div:nth-child(3n+1) > div {
+.filter img {
+  height: 280px;
+}
+
+.listings-container > div:nth-child(3n+1) .card {
   border: 2px solid #03658C;
   background-color: #EAF3F6;
   transition: filter 0.5s ease-in-out;
 }
 
-.listings-container div:nth-child(3n+1):hover {
+.listings-container > div:nth-child(3n+1):hover .card {
   filter: drop-shadow(3px 3px 8px #03658C);
 }
 
-.listings-container div:nth-child(3n+2) > div {
+.listings-container > div:nth-child(3n+2) .card {
   border: 2px solid #FFDC13;
   background-color: #EAF3F6;
   transition: filter 0.5s ease-in-out;
 }
 
-.listings-container div:nth-child(3n+2):hover {
+.listings-container > div:nth-child(3n+2):hover .card {
   filter: drop-shadow(3px 3px 8px #FFDC13);
 }
 
-.listings-container div:nth-child(3n+3) > div {
+.listings-container > div:nth-child(3n+3) .card {
   border: 2px solid #B62F5C;
   background-color: #EAF3F6;
   transition: filter 0.5s ease-in-out;
 }
 
-.listings-container div:nth-child(3n+3):hover {
+.listings-container > div:nth-child(3n+3):hover .card {
   filter: drop-shadow(3px 3px 8px #B62F5C);
 }
 

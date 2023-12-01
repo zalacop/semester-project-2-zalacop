@@ -1,0 +1,48 @@
+a {
+    color: $dark;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-img {
+    height: 380px;
+    width: max-content;
+}
+
+.images-gallery {
+    width: 70%;
+    border: 2px solid $info;
+}
+
+.preview {
+    width: wrap;
+}
+
+.preview img {
+    width: 25%;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+}
+
+img.active-img {
+    opacity: 1;
+}
+
+.auction-info {
+    min-width: max-content;
+    height: max-content;
+    border: 2px solid $primary;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.history {
+    font-size: 0.9em;
+    margin: 0;
+}

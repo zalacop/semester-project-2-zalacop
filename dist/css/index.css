@@ -11856,6 +11856,55 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+a {
+  color: #131F35;
+  font-family: "Poppins", sans-serif;
+}
+
+.main-img {
+  height: 380px;
+  width: max-content;
+}
+
+.images-gallery {
+  width: 70%;
+  border: 2px solid #03658C;
+}
+
+.preview {
+  width: wrap;
+}
+
+.preview img {
+  width: 25%;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+}
+
+img.active-img {
+  opacity: 1;
+}
+
+.auction-info {
+  min-width: max-content;
+  height: max-content;
+  border: 2px solid #FFDC13;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.history {
+  font-size: 0.9em;
+  margin: 0;
+}
+
 body {
   background-color: #EAF3F6;
 }
@@ -11951,6 +12000,7 @@ footer {
   background: #FFDC13;
   border-radius: 0;
   filter: drop-shadow(0 0 0 transparent);
+  transition: filter 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .cta:hover {

@@ -1,12 +1,7 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Poppins&family=Rokkitt&display=swap');
-
-// font-family: 'Crimson Text', serif;
-
-// font-family: 'Poppins', sans-serif;
-
-// font-family: 'Rokkitt', serif;
+@import "listing.scss";
 
 body {
     background-color: $light;
@@ -42,7 +37,7 @@ small {
 nav a,
 .cta,
 li {
-    font-family: 'Poppins', sans-serif;;
+    font-family: 'Poppins', sans-serif;
 }
 
 .avatar {
@@ -100,6 +95,7 @@ footer {
     background: $primary;
     border-radius: 0;
     filter: drop-shadow(0 0 0 transparent);
+    transition: filter 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .cta:hover {

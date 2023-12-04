@@ -11861,23 +11861,37 @@ a {
   font-family: "Poppins", sans-serif;
 }
 
+.product-container {
+  max-width: 1050px;
+}
+
 .main-img {
-  height: 380px;
-  width: max-content;
-  margin: 20px 30px;
+  max-height: 380px;
+  min-height: 220px;
+  max-width: 500px;
+  min-width: 300px;
 }
 
 .images-gallery {
-  width: 70%;
+  max-width: 560px;
+  min-width: 320px;
   border: 2px solid #03658C;
 }
 
+.images-gallery img {
+  max-width: 100%;
+  height: auto;
+}
+
 .preview {
-  width: wrap;
+  max-width: 95%;
+  min-width: 280px;
 }
 
 .preview img {
-  width: 25%;
+  max-height: 80px;
+  min-height: 70px;
+  width: wrap;
   opacity: 0.6;
   cursor: pointer;
   transition: opacity 0.2s ease-in;
@@ -11888,7 +11902,8 @@ img.active-img {
 }
 
 .auction-info {
-  min-width: max-content;
+  max-width: max-content;
+  min-width: 320px;
   height: max-content;
   border: 2px solid #FFDC13;
 }
@@ -11930,7 +11945,8 @@ img.active-img {
   font-weight: 600;
 }
 
-.button {
+.button,
+.username {
   width: fit-content;
 }
 
@@ -11938,7 +11954,6 @@ img.active-img {
   width: 1000px;
   background: #EAF3F6;
   margin: 10% auto;
-  padding: 50px 0;
 }
 
 .new-avatar p {

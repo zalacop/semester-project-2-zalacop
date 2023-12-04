@@ -15,7 +15,6 @@
     width: 270px;
     height: 270px;
     margin: 15px;
-
 }
 
 .username {
@@ -30,7 +29,7 @@
 }
 
 .new-avatar {
-    width: 1000px;
+    max-width: 1000px;
     background: $light;
     margin: 10% auto;
 }

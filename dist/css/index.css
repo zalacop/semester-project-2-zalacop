@@ -11951,7 +11951,7 @@ img.active-img {
 }
 
 .new-avatar {
-  width: 1000px;
+  max-width: 1000px;
   background: #EAF3F6;
   margin: 10% auto;
 }

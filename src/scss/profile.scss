@@ -1,0 +1,28 @@
+.profile-background {
+    background: repeating-radial-gradient(circle at bottom left, $primary, $secondary, $info);
+    height: 50%;
+    padding:  5% 10%;
+    margin-bottom: 100px;
+}
+
+.profile-background img {
+    width: 250px;
+}
+
+.avatar-container {
+    background: $light;
+    border: 1px solid $dark;
+    width: 270px;
+    height: 270px;
+    margin: 15px;
+}
+
+.username {
+    background: $light;
+    border: 1px solid $dark;
+    font-weight: 600;
+}
+
+.button {
+    width: fit-content;
+}

@@ -11934,6 +11934,17 @@ img.active-img {
   width: fit-content;
 }
 
+.new-avatar {
+  width: 1000px;
+  background: #EAF3F6;
+  margin: 10% auto;
+  padding: 50px 0;
+}
+
+.new-avatar p {
+  font-weight: 600;
+}
+
 body {
   background-color: #EAF3F6;
 }
@@ -11948,16 +11959,13 @@ footer {
   width: 300px;
 }
 
-h1, .h1 {
-  font-family: "Rokkitt", serif;
-  font-weight: bold;
-}
-
-h2, .h2,
+h1, .h1,
+h2,
+.h2,
 h3,
 .h3 {
   font-family: "Rokkitt", serif;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 p,
@@ -12007,7 +12015,8 @@ footer {
   border-radius: 0 !important;
 }
 
-.search span {
+.search span,
+input {
   border-radius: 0;
 }
 
@@ -12034,10 +12043,27 @@ footer {
 
 .cta:hover {
   background: #03658C;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: #EAF3F6;
   border: 1px solid transparent;
   filter: drop-shadow(5px 5px 10px #131F35);
+}
+
+.cancel {
+  border-radius: 0;
+  border: 2px solid #B62F5C;
+  color: #131F35;
+  background: #EAF3F6;
+  filter: drop-shadow(5px 5px 10px transparent);
+  transition: filter 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+}
+
+.cancel:hover {
+  background: #B62F5C;
+  border: 2px solid transparent;
+  letter-spacing: 2px;
+  color: #EAF3F6;
+  filter: drop-shadow(5px 5px 10px #B62F5C);
 }
 
 .card {

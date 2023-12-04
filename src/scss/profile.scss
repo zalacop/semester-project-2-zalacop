@@ -26,3 +26,15 @@
 .button {
     width: fit-content;
 }
+
+.new-avatar {
+    width: 1000px;
+    background: $light;
+    margin: 10% auto;
+    padding: 50px 0;
+}
+
+.new-avatar p {
+    font-weight: 600;
+}
+

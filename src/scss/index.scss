@@ -18,15 +18,11 @@ footer {
     width: 300px;
 }
 
-h1 {
-    font-family: 'Rokkitt', serif;
-    font-weight: bold;
-}
-
+h1,
 h2,
 h3 {
     font-family: 'Rokkitt', serif;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 p,
@@ -74,7 +70,8 @@ footer {
     border-radius: 0 !important;
 }
 
-.search span {
+.search span,
+input {
     border-radius: 0;
 }
 
@@ -101,10 +98,27 @@ footer {
 
 .cta:hover {
     background: $info;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: $light;
     border: 1px solid transparent;
     filter: drop-shadow(5px 5px 10px $dark);
+}
+
+.cancel {
+    border-radius: 0;
+    border: 2px solid $secondary;
+    color: $dark;
+    background: $light;
+    filter: drop-shadow(5px 5px 10px transparent);
+    transition: filter 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+}
+
+.cancel:hover {
+    background: $secondary;
+    border: 2px solid transparent;
+    letter-spacing: 2px;
+    color: $light;
+    filter: drop-shadow(5px 5px 10px $secondary);
 }
 
 .card {

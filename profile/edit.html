@@ -39,25 +39,30 @@
             </div>
         </nav>
     </header>
-    <main>
-        <div>
-            <div>
-                <div>
+    <main class="profile-background m-0">
+        <div class="d-flex flex-column gap-3">
+            <div class="d-flex gap-5">
+                <div class="d-flex avatar-container justify-content-center align-items-center">
                     <img src="/images/shutterstock_1362212747.jpg" alt="Profile avatar">
                 </div>
-            </div>
-            <div>
-                <p>LunarEcho87</p>
+                <div class="align-self-end py-2 px-5 username">
+                    <p class="my-auto fs-5">LunarEcho87</p>
+                </div>
             </div>
         </div>
-        <div>
-            <div>
-                <p>New avatar URL:</p>
-                <input type="text" name="" id="">
+        <div class="d-flex flex-column new-avatar gap-4">
+            <div class="d-flex align-items-center justify-content-center gap-3">
+                <p class="fs-5 my-auto">New avatar URL:</p>
+                <input type="text" name="" id="" class="w-50">
             </div>
-            <a href="index.html">
-                <button>Save</button>
-            </a>
+            <div class="d-flex flex-column align-items-center gap-3">
+                <a href="index.html">
+                    <button class="btn btn-outline-dark px-5 py-1 fs-5 cta">Save</button>
+                </a>
+                <a href="index.html">
+                    <button class="btn px-3 py-1 cancel">Cancel</button>
+                </a>
+            </div>
         </div>
     </main>
     <footer class="d-flex justify-content-between align-items-center">

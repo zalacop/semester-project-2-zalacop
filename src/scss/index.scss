@@ -4,6 +4,7 @@
 @import "listing.scss";
 @import "profile.scss";
 @import "sign-in.scss";
+@import "new.scss";
 
 body {
     background-color: $light;
@@ -27,17 +28,17 @@ h3 {
 }
 
 p,
-small {
+small,
+label,
+.new-account p,
+.agree p {
     font-family: 'Crimson Text', serif;
     color: $dark;
 }
 
 nav a,
 .cta,
-li,
-label,
-.new-account p,
-.agree p {
+li {
     font-family: 'Poppins', sans-serif;
 }
 

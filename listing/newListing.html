@@ -39,54 +39,46 @@
             </div>
         </nav>
     </header>
-    <main>
-        <div>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text">
+    <main class="profile-background m-0">
+        <div class="new-listing p-5 border border-dark my-5 mx-auto d-flex flex-column align-items-center">
+            <a href="/index.html" class="align-self-start">Go back</a>
+            <div class="panel d-flex flex-column justify-content-center align-items-center m-auto my-4 w-100">
+                <div class="panel-body text-center w-75">
+                    <h2 class="mx-auto">Create a New Listing</h2>
+                    <div class="row">
+                        <!-- First Column for Title and Description -->
+                        <div class="col-md-12 col-lg-6 my-4">
+                            <div class="register_input mb-3 text-center">
+                                <p class="fs-5 m-0">Title*</p>
+                                <input type="text" class="form-control mx-auto">
+                            </div>
+                            <div class="register_input mb-3 text-center">
+                                <p class="fs-5 m-0">The date of the end of the auction*</p>
+                                <input type="text" class="form-control mx-auto">
+                            </div>
+                            <div class="register_input mb-3 text-center">
+                                <p class="fs-5 m-0">Description*</p>
+                                <textarea name="" id="" cols="30" rows="5" class="form-control mx-auto"></textarea>
+                            </div>
+                        </div>
+                        <!-- Second Column for Main Image and Add Image button -->
+                        <div class="col-md-12 col-lg-6 d-flex flex-column justify-content-start my-4 mx-auto">
+                            <div class="register_input mb-3 text-center">
+                                <p class="fs-5 m-0">Main image URL*</p>
+                                <input type="text" class="form-control mx-auto">
+                            </div>
+                            <button class="btn btn-outline-dark px-3 py-1 fs-6 mx-auto my-3 cta">Add Image</button>
+                        </div>
+                    </div>
+                    <!-- Centered Buttons with spacing -->
+                    <div class="d-flex flex-column text-center">
+                        <button class="btn btn-outline-dark px-4 py-1 fs-5 mx-auto mb-4 cta">Post Listing</button>
+                        <button class="btn px-3 py-1 mx-auto cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <nav>
-                <ul>
-                    <li>Books</li>
-                    <li>Watches</li>
-                    <li>Whiskey</li>
-                    <li>Clothes</li>
-                </ul>
-            </nav>
-        </div>
-        <div>
-            <a href="/index.html">Go back</a>
-           <div>
-                <h2>Create a New Listing</h2>
-                <form>
-                 <div>
-                    <div>
-                        <p>Title*</p>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <p>The date of the end of the auction*</p>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <p>Description*</p>
-                        <textarea name="" id="" cols="30" rows="5"></textarea>
-                    </div>
-                 </div>
-                 <div>
-                    <div>
-                        <p>Main image URL*</p>
-                        <input type="text">
-                    </div>
-                    <button>Add More Images</button>
-                 </div>
-                 <div>
-                    <button>Post Listing</button>
-                    <button>Cancel</button>
-                 </div>
-                </form>
-           </div>
-        </div>
+        
     </main>
     <footer class="d-flex justify-content-between align-items-center">
         <div>

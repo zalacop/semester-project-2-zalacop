@@ -1,0 +1,20 @@
+.new-listing {
+    max-width: 1000px;
+    background-color: $light;
+    color: $dark;
+}
+
+.new-listing p {
+    text-align: left;
+}
+
+.register_input input,
+.register_input textarea {
+    border-radius: 0;
+    width: clamp(220px, 50vw + 20px, 280px);
+    border: 1px solid $dark;
+}
+
+.register_input p {
+   margin: 20px;
+}

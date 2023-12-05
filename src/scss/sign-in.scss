@@ -1,0 +1,28 @@
+form {
+    max-width: 600px;
+    background: $light;
+    color: $dark;
+}
+
+.register_input input {
+    border-radius: 0;
+    width: clamp(250px, 50vw, 450px);
+    border: 1px solid $dark;
+}
+
+.hyperlink {
+    text-decoration: underline;
+    cursor: pointer;
+    transition: filter 0.3s ease-in-out, color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+}
+
+.hyperlink:hover {
+    color: $info;
+    letter-spacing: 1px;
+    filter: drop-shadow(5px 5px 10px $info);
+}
+
+.agree input {
+  width: 20px;
+  height: 20px;
+}

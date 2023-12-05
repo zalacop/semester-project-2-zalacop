@@ -11960,6 +11960,35 @@ img.active-img {
   font-weight: 600;
 }
 
+form {
+  max-width: 600px;
+  background: #EAF3F6;
+  color: #131F35;
+}
+
+.register_input input {
+  border-radius: 0;
+  width: clamp(250px, 50vw, 450px);
+  border: 1px solid #131F35;
+}
+
+.hyperlink {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: filter 0.3s ease-in-out, color 0.3s ease-in-out, letter-spacing 0.3s ease-in-out;
+}
+
+.hyperlink:hover {
+  color: #03658C;
+  letter-spacing: 1px;
+  filter: drop-shadow(5px 5px 10px #03658C);
+}
+
+.agree input {
+  width: 20px;
+  height: 20px;
+}
+
 body {
   background-color: #EAF3F6;
 }
@@ -11992,7 +12021,10 @@ small,
 
 nav a,
 .cta,
-li {
+li,
+label,
+.new-account p,
+.agree p {
   font-family: "Poppins", sans-serif;
 }
 

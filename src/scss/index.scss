@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Poppins&family=Rokkitt&display=swap');
 @import "listing.scss";
 @import "profile.scss";
+@import "sign-in.scss";
 
 body {
     background-color: $light;
@@ -33,7 +34,10 @@ small {
 
 nav a,
 .cta,
-li {
+li,
+label,
+.new-account p,
+.agree p {
     font-family: 'Poppins', sans-serif;
 }
 

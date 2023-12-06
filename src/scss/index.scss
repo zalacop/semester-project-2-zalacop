@@ -38,7 +38,8 @@ label,
 
 nav a,
 .cta,
-li {
+li,
+.dropdown-item {
     font-family: 'Poppins', sans-serif;
 }
 
@@ -67,7 +68,8 @@ footer {
 }
 
 .footer-logo {
-    width: 250px;
+    max-width: 250px;
+    min-width: 150px
 }
 
 .search {
@@ -173,4 +175,29 @@ input {
 
 .listings-container > div:nth-child(3n+3):hover .card {
     filter: drop-shadow(3px 3px 8px $secondary);
+}
+
+.dropdown-menu {
+    background-color: $light;
+    color: $dark;
+}
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+@media (max-width: 767.98px) {
+    .logo {
+        width: 200px;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .xs-height {
+        height: 75% !important;
+    }
 }

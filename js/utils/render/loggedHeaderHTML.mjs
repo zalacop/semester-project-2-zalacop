@@ -61,6 +61,7 @@ function createLoggedInUserHeader(profileInfo) {
 
     const mobileLogout = document.createElement("li");
     const logoutLinkMobile = document.createElement("a");
+    logoutLinkMobile.id = "mobileLogout";
     logoutLinkMobile.href = "/index.html";
     logoutLinkMobile.classList.add("dropdown-item");
     logoutLinkMobile.innerText = "Log Out";
@@ -106,6 +107,7 @@ function createLoggedInUserHeader(profileInfo) {
     const desktopLogout = document.createElement("li");
     desktopLogout.classList.add("nav-item", "fs-5", "text-transform");
     const logoutLinkDesktop = document.createElement("a");
+    logoutLinkDesktop.id = "desktopLogout";
     logoutLinkDesktop.href = "/index.html";
     logoutLinkDesktop.classList.add("text-decoration-none");
     logoutLinkDesktop.innerText = "Log Out";

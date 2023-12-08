@@ -1,4 +1,4 @@
-function createLoggedInUserHeader(profileInfo) {
+export default function createLoggedInUserHeader(userInfo) {
 
     const header = document.createElement("header");
     header.classList.add("container", "d-flex", "justify-content-between", "align-items-center", "px-5", "w-100");
@@ -36,7 +36,7 @@ function createLoggedInUserHeader(profileInfo) {
     dropdown.classList.add("dropdown", "d-md-none");
 
     const avatarHeader = document.createElement("img");
-    avatarHeader.src = "/images/shutterstock_1362212747.jpg";
+    avatarHeader.src = localStorage.getItem('avatar');
     avatarHeader.alt = "Profile avatar";
     avatarHeader.classList.add("dropdown-toggle", "m-3", "me-5", "avatar");
     avatarHeader.setAttribute("role", "button");
@@ -54,7 +54,7 @@ function createLoggedInUserHeader(profileInfo) {
 
     const mobileProfile = document.createElement("li");
     const profileLinkMobile = document.createElement("a");
-    profileLinkMobile.href = "/profile/index.html";
+    profileLinkMobile.href = `/profile/index.html?profile=${userInfo.name}`;
     profileLinkMobile.classList.add("dropdown-item");
     profileLinkMobile.innerText = "Profile";
     mobileProfile.appendChild(profileLinkMobile);
@@ -94,12 +94,12 @@ function createLoggedInUserHeader(profileInfo) {
     listingsLinkDesktop.href = "/index.html";
     listingsLinkDesktop.classList.add("text-decoration-none");
     listingsLinkDesktop.innerText = "Listings";
-    mobileListings.appendChild(listingsLinkDesktop);
+    desktopListings.appendChild(listingsLinkDesktop);
 
     const desktopProfile = document.createElement("li");
     desktopProfile.classList.add("nav-item", "fs-5", "text-transform");
     const profileLinkDesktop = document.createElement("a");
-    profileLinkDesktop.href = "/profile/index.html";
+    profileLinkDesktop.href = `/profile/index.html?profile=${userInfo.name}`;
     profileLinkDesktop.classList.add("text-decoration-none");
     profileLinkDesktop.innerText = "Profile";
     desktopProfile.appendChild(profileLinkDesktop);
@@ -115,12 +115,16 @@ function createLoggedInUserHeader(profileInfo) {
 
     const desktopTotal = document.createElement("li");
     desktopTotal.classList.add("nav-item", "fs-5", "text-transform");
-    desktopTotal.innerHTML = '<img src="images/klobuk s kovanci.svg" alt="Icon for showing you the total" class="total">';
+    const desktopTotalIcon = document.createElement("img");
+    desktopTotalIcon.src = "/images/klobuk s kovanci.svg";
+    desktopTotalIcon.alt = "Icon for showing you the total";
+    desktopTotalIcon.classList.add("total");
+    desktopTotal.appendChild(desktopTotalIcon);
 
     const desktopAvatar = document.createElement("li");
     desktopAvatar.classList.add("nav-item");
     const avatarImg = document.createElement("img");
-    avatarImg.src = "/images/shutterstock_1362212747.jpg";
+    avatarImg.src = userInfo.avatar;
     avatarImg.alt = "Profile avatar";
     avatarImg.classList.add("avatar");
     desktopAvatar.appendChild(avatarImg);
@@ -131,11 +135,13 @@ function createLoggedInUserHeader(profileInfo) {
     desktopUl.appendChild(desktopTotal);
     desktopUl.appendChild(desktopAvatar);
 
-    desktopDiv.appendChild(navbarUl);
+    desktopDiv.appendChild(desktopUl);
 
-    nav.appendChild(desktopDiv);
+    desktopNav.appendChild(desktopDiv);
 
-    header.appendChild(nav);
+    header.appendChild(desktopNav);
 
     document.body.appendChild(header);
+
+    return header.outerHTML;
 }

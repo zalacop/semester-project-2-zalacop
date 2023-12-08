@@ -71,7 +71,7 @@ function createUnregisteredHeader() {
     listingsLinkDesktop.href = "/index.html";
     listingsLinkDesktop.classList.add("text-decoration-none");
     listingsLinkDesktop.innerText = "Listings";
-    mobileListings.appendChild(listingsLinkDesktop);
+    desktopListings.appendChild(listingsLinkDesktop);
 
     const desktopLogin = document.createElement('li');
     desktopLogin.classList.add("nav-item", "fs-5", "text-transform");

@@ -10,7 +10,8 @@ async function processLoginUser(event) {
     const loggedInUser = await loginUser(loginEmail.value, loginPassword.value);
 
     if(loggedInUser) {
-       window.location.replace("/profile/index.html"); 
+        const userName = localStorage.getItem('name');
+       window.location.replace(`/profile/index.html?profile=${userName}`); 
     } else {
         console.log("Login failed");
         alert("Email or password is incorrect!");

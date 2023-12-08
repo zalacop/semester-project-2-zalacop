@@ -11939,6 +11939,11 @@ img.active-img {
   margin: 15px;
 }
 
+#user_avatar {
+  width: 255px;
+  height: 255px;
+}
+
 .username {
   background: #EAF3F6;
   border: 1px solid #131F35;

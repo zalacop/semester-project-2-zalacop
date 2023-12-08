@@ -33,8 +33,6 @@ async function fetchListings() {
         const listings = await response.json();
         const allListings = mapListings(listings);
 
-        console.log(allListings)
-
         return allListings;
 
     } catch (error) {

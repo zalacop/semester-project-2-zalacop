@@ -17,9 +17,10 @@ const id = params.get("profile");
 const mobileLogoutButton = document.querySelector("#mobileLogout");
 const desktopLogoutButton = document.querySelector("#desktopLogout");
 
-mobileLogoutButton.addEventListener('click', logOut);
-desktopLogoutButton.addEventListener('click', logOut);
-
+if (mobileLogoutButton && desktopLogoutButton) {
+    mobileLogoutButton.addEventListener('click', logOut);
+    desktopLogoutButton.addEventListener('click', logOut);
+}
 async function userInfo() {
     const info = await getProfileInfo(id);
 

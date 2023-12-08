@@ -1,5 +1,5 @@
-function createUnregisteredHeader() {
-    const header = document.createElement('header');
+export default function createUnregisteredHeader() {
+    const header = document.querySelector('header');
     header.classList.add("container", "d-flex", "justify-content-between", "align-items-center", "px-5", "w-100");
 
     const logoDiv = document.createElement('div');
@@ -99,5 +99,5 @@ function createUnregisteredHeader() {
     header.appendChild(mobileNav);
     header.appendChild(desktopNav);
 
-    document.body.appendChild(header);
+    return header;
 }

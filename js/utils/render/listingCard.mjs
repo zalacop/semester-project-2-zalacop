@@ -28,5 +28,5 @@ export default function createListingCard(singleListing) {
 
     div.appendChild(cardDiv);
 
-    document.body.appendChild(div);
+    return div;
 }

@@ -1,6 +1,6 @@
 export default function createLoggedInUserHeader(userInfo) {
 
-    const header = document.createElement("header");
+    const header = document.querySelector("header");
     header.classList.add("container", "d-flex", "justify-content-between", "align-items-center", "px-5", "w-100");
 
     const logoDiv = document.createElement("div");
@@ -141,7 +141,5 @@ export default function createLoggedInUserHeader(userInfo) {
 
     header.appendChild(desktopNav);
 
-    document.body.appendChild(header);
-
-    return header.outerHTML;
+    return header;
 }

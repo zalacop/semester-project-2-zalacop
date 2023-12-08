@@ -22,7 +22,6 @@ export async function getProfileInfo(name) {
         const getRequest = await getMethod();
         const response = await fetch(userProfileURL, getRequest);
         const profile = await response.json();
-        console.log(profile._count.listings)
 
         let getListings = profile._count.listings;
 

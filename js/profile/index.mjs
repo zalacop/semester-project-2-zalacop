@@ -1,13 +1,7 @@
 import logOut from "../utils/logout.mjs";
 import { getProfileInfo } from "../utils/request-methods/get.mjs";
 import createListingCard from "../utils/render/listingCard.mjs";
-// import createLoggedInUserHeader from "../utils/render/loggedHeaderHTML.mjs";
-
-const mobileLogoutButton = document.querySelector("#mobileLogout");
-const desktopLogoutButton = document.querySelector("#desktopLogout");
-
-mobileLogoutButton.addEventListener('click', logOut);
-desktopLogoutButton.addEventListener('click', logOut);
+import createLoggedInUserHeader from "../utils/render/loggedHeaderHTML.mjs";
 
 const header = document.querySelector("header");
 
@@ -19,6 +13,27 @@ const userListings = document.querySelector(".listings-container");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("profile");
+
+console.log(queryString)
+
+function displayHeader() {
+    header.innerHTML = " ";
+    const headerInfo = {
+        "name": localStorage.getItem('name'),
+        "avatar": localStorage.getItem('avatar')
+    }
+    const createHeader = createLoggedInUserHeader(headerInfo);
+}
+
+displayHeader();
+
+
+const mobileLogoutButton = document.querySelector("#mobileLogout");
+const desktopLogoutButton = document.querySelector("#desktopLogout");
+
+mobileLogoutButton.addEventListener('click', logOut);
+desktopLogoutButton.addEventListener('click', logOut);
+
 
 async function userInfo() {
     const info = await getProfileInfo(id);

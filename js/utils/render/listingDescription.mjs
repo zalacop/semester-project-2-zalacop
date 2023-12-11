@@ -1,5 +1,5 @@
-function mapImages(gallery) {
-    return gallery.map(item => item);
+function mapItem(array) {
+    return array.map(item => item);
 }
 
 function createImage(src) {
@@ -17,7 +17,6 @@ function createImage(src) {
 
 
 export default function createListingDescription(listingInfo) {
-
     const imageGallery = document.createElement("div");
     imageGallery.classList.add("images-gallery", "mx-auto");
 
@@ -38,7 +37,7 @@ export default function createListingDescription(listingInfo) {
     const rowDiv = document.createElement("div");
     rowDiv.classList.add("row", "justify-content-center");
 
-    const images = mapImages(listingInfo.media);
+    const images = mapItem(listingInfo.media);
 
     images.forEach(image => {
         if (image) {
@@ -58,10 +57,10 @@ export default function createListingDescription(listingInfo) {
 
     const headingElement = document.createElement("h3");
     headingElement.classList.add("fs-4");
-    headingElement.textContent = listingInfo.title;
+    headingElement.innerText = listingInfo.title;
 
     const paragraphElement = document.createElement("p");
-    paragraphElement.textContent = listingInfo.description;
+    paragraphElement.innerText = listingInfo.description;
 
     textDiv.appendChild(headingElement);
     textDiv.appendChild(paragraphElement);

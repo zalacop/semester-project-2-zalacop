@@ -2,7 +2,7 @@ import displayHeader from "../utils/displayHeader.mjs";
 import logOut from "../utils/logout.mjs";
 import { urlListings } from "../utils/url.mjs";
 import createListingDescription from "../utils/render/listingDescription.mjs";
-
+import createBidInfoCard from "../utils/render/bidInfo.mjs";
 
 displayHeader();  
 
@@ -19,8 +19,10 @@ const productContainer = document.querySelector(".product-container");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("listing");
+const sellerInfo = "_seller=true";
+const bidsInfo =  "_bids=true"
 
-const listingURL = urlListings + "/" + id;
+const listingURL = urlListings + "/" + id + "?" + sellerInfo + "&" + bidsInfo;
 
 async function singleListingPost() {
     try {
@@ -28,8 +30,12 @@ async function singleListingPost() {
         const response = await fetch(listingURL);
         const listing = await response.json();
         const listingInfo = createListingDescription(listing);
+        const biddingInfo = createBidInfoCard(listing);
+
+        console.log(listing)
 
         productContainer.appendChild(listingInfo);
+        productContainer.appendChild(biddingInfo);
 
         const mainImage = document.querySelector(".main-img");
         const previewContainer = document.querySelector(".preview");
@@ -43,8 +49,10 @@ async function singleListingPost() {
             previewImages.forEach((img) => img.classList.remove("active-img"));
 
             event.target.classList.add("active-img");
-        }
-        );
+        });
+
+
+
     } catch (error) {
         console.log(error);
     }

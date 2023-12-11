@@ -11902,7 +11902,7 @@ img.active-img {
 }
 
 .auction-info {
-  max-width: max-content;
+  max-width: 400px;
   min-width: 320px;
   height: max-content;
   border: 2px solid #FFDC13;
@@ -12120,6 +12120,7 @@ input {
   background: #03658C;
   letter-spacing: 2px;
   color: #EAF3F6;
+  margin: 0;
   border: 1px solid transparent;
   filter: drop-shadow(5px 5px 10px #131F35);
 }
@@ -12138,6 +12139,7 @@ input {
   border: 2px solid transparent;
   letter-spacing: 2px;
   color: #EAF3F6;
+  margin: 0;
   filter: drop-shadow(5px 5px 10px #B62F5C);
 }
 

@@ -107,6 +107,7 @@ input {
     background: $info;
     letter-spacing: 2px;
     color: $light;
+    margin: 0;
     border: 1px solid transparent;
     filter: drop-shadow(5px 5px 10px $dark);
 }
@@ -125,6 +126,7 @@ input {
     border: 2px solid transparent;
     letter-spacing: 2px;
     color: $light;
+    margin: 0;
     filter: drop-shadow(5px 5px 10px $secondary);
 }
 

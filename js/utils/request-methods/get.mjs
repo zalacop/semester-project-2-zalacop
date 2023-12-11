@@ -1,4 +1,4 @@
-import { urlProfile } from "../url.mjs";
+import { urlProfile, urlListings } from "../url.mjs";
 
 export async function getMethod() {
     try {

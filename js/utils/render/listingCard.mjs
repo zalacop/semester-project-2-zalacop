@@ -3,7 +3,7 @@ export default function createListingCard(singleListing) {
     div.classList.add("col-xl-3", "col-lg-3", "col-md-4", "col-sm-6", "col-12", "mb-5");
 
     const cardDiv = document.createElement("div");
-    cardDiv.classList.add("card");
+    cardDiv.classList.add("card", "h-100");
 
     const listingLink = document.createElement("a");
     listingLink.href = `/listing/index.html?listing=${singleListing.id}`;

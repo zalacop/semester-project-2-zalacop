@@ -40,6 +40,25 @@ export default function createBidInfoCard(info) {
     } 
     currentBidDiv.appendChild(currentAmount);
 
+    const dateDiv = document.createElement("div");
+    dateDiv.classList.add("d-flex", "align-items-center", "gap-1");
+    
+    const auctionsEnds = document.createElement("p");
+    auctionsEnds.innerText= "Auction ends:";
+
+    let date = new Date(info.endsAt);
+    const dateFormat = {
+        day: "numeric",
+        month: "numeric",
+        year: "numeric"
+    };
+
+    const ends = document.createElement("p");
+    ends.innerText = `${date.toLocaleDateString("en-GB", dateFormat)}`;
+
+    dateDiv.appendChild(auctionsEnds);
+    dateDiv.appendChild(ends);
+
     const bidInputDiv = document.createElement("div");
     bidInputDiv.classList.add("d-flex", "align-items-center", "gap-2", "my-4", "w-100");
     
@@ -48,7 +67,7 @@ export default function createBidInfoCard(info) {
     
     const bidInput = document.createElement("input");
     bidInput.type = "text";
-    bidInput.classList.add("w-25");
+    bidInput.classList.add("w-25", "bid-value");
     
     const bidCurrency = document.createElement("p");
     bidCurrency.classList.add("fs-5", "bold", "my-auto");
@@ -56,6 +75,7 @@ export default function createBidInfoCard(info) {
     
     const bidButton = document.createElement("button");
     bidButton.classList.add("btn", "btn-outline-dark", "px-4", "py-1", "fs-6", "cta");
+    bidButton.id = "bid-button";
     bidButton.innerText = "Bid Now";
     
     bidFlex.appendChild(bidInput);
@@ -66,6 +86,7 @@ export default function createBidInfoCard(info) {
 
     div.appendChild(seller);
     div.appendChild(currentBidDiv);
+    div.appendChild(dateDiv);
     div.appendChild(bidInputDiv);
 
 

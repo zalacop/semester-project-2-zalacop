@@ -1,6 +1,10 @@
 import createListingCard from "./utils/render/listingCard.mjs";
 import { urlListings } from "./utils/url.mjs";
 
+const getLatestListings = "?sort=created";
+
+const activeListingsURL = urlListings + getLatestListings;
+
 
 function mapListings(listings) {
     return listings
@@ -29,10 +33,9 @@ function mapListings(listings) {
 
 async function fetchListings() {
     try {
-        const response = await fetch(urlListings);
+        const response = await fetch(activeListingsURL);
         const listings = await response.json();
         const allListings = mapListings(listings);
-
         return allListings;
 
     } catch (error) {
@@ -55,10 +58,10 @@ export async function displayListings() {
         });
 
         createHTML.forEach(listing => {
-            return listingContainer.appendChild(listing)
+            return listingContainer.appendChild(listing);
         });
 
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }

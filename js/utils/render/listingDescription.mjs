@@ -18,7 +18,7 @@ function createImage(src) {
 
 export default function createListingDescription(listingInfo) {
     const imageGallery = document.createElement("div");
-    imageGallery.classList.add("images-gallery", "mx-auto");
+    imageGallery.classList.add("images-gallery", "mx-auto", "gallery-card");
 
     const div = document.createElement("div");
     div.classList.add("d-flex", "justify-content-center");

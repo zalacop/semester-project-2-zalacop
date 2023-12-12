@@ -3,6 +3,7 @@ import logOut from "../utils/logout.mjs";
 import { urlListings } from "../utils/url.mjs";
 import createListingDescription from "../utils/render/listingDescription.mjs";
 import createBidInfoCard from "../utils/render/bidInfo.mjs";
+import bidOnListing from "./bid.mjs";
 
 displayHeader();  
 
@@ -32,8 +33,6 @@ async function singleListingPost() {
         const listingInfo = createListingDescription(listing);
         const biddingInfo = createBidInfoCard(listing);
 
-        console.log(listing)
-
         productContainer.appendChild(listingInfo);
         productContainer.appendChild(biddingInfo);
 
@@ -51,7 +50,9 @@ async function singleListingPost() {
             event.target.classList.add("active-img");
         });
 
+        const bidButton = document.querySelector("#bid-button");
 
+        bidButton.addEventListener('click', bidOnListing);
 
     } catch (error) {
         console.log(error);
@@ -59,4 +60,6 @@ async function singleListingPost() {
 }
 
 singleListingPost();
+
+
 

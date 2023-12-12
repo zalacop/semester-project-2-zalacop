@@ -41,7 +41,8 @@ export async function loginUser(email, password) {
             localStorage.setItem('accessToken', data.accessToken);
             localStorage.setItem('name', data.name);
             localStorage.setItem('email', data.email);
-            localStorage.setItem('avatar', data.avatar)
+            localStorage.setItem('avatar', data.avatar);
+            localStorage.setItem('credits', data.credits)
 
             return data;
 

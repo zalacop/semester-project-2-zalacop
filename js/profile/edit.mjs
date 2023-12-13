@@ -3,6 +3,7 @@ import logOut from "../utils/logout.mjs";
 import { urlProfile } from "../utils/url.mjs";
 import putMethod from "../utils/request-methods/put.mjs";
 import { getUserInfoAndDisplayIt, setPageTitle } from "../utils/changeTitle.mjs";
+import { validateURL } from "../sign-in/validation.mjs";
 
 displayHeader();  
 
@@ -51,7 +52,9 @@ async function updateAvatar(url) {
 save.addEventListener('click', function(event) {
     event.preventDefault();
     const input = document.querySelector("#new_avatar").value;
-    updateAvatar(input);
+    if(validateURL(input)) {
+        updateAvatar(input);
+    }
 });
 
 cancel.addEventListener('click', () => {

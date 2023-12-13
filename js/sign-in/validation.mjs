@@ -74,7 +74,7 @@ function passwordMatches(errorType, password, confirm, error) {
     }
 }
 
-function validateURL(url) {
+export function validateURL(url) {
     const regExURL = /^(https?):\/\/(www\.)?([a-zA-Z0-9]{2,20}(?:\.[a-zA-Z]{2,})+)(\/.*)?$/;
 
     const patternMatchesURL = regExURL.test(url);

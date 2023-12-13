@@ -5,9 +5,6 @@ import { setPageTitle, getUserInfoAndDisplayIt } from "../utils/changeTitle.mjs"
 
 displayHeader();
 
-const userAvatar = document.querySelector("#user_avatar");
-const username = document.querySelector(".name");
-
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("profile");
@@ -23,12 +20,10 @@ if (mobileLogoutButton && desktopLogoutButton) {
 const userInfo = await getUserInfoAndDisplayIt(id);
 setPageTitle(userInfo.name);
 
-
 const listingsContainer = document.querySelector("#listings_container");
 const userListings = document.querySelector(".listings-container");
 
 async function displayListing(info) {
-    //const info = await userInfo();
     const listings = info.listings;
 
     if (listings !== undefined && listings !== null && listings !== "") {

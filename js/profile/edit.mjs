@@ -28,3 +28,32 @@ const href = `/profile/index.html?profile=${id}`;
 const updateEndpoint = "/media";
 const updateURL = urlProfile + "/" + id + updateEndpoint;
 
+async function updateAvatar(url) { 
+    try {
+        const body = {avatar: url};
+        const putRequest = await putMethod(body);
+        const response = await fetch(updateURL, putRequest);
+
+        if(response.ok) {   
+            localStorage.removeItem('avatar');
+            localStorage.setItem('avatar', url);
+            
+            alert("You successfully updated your avatar!");
+            window.location.href = href;
+        } else {
+            alert("You did not update your avatar!");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+save.addEventListener('click', function(event) {
+    event.preventDefault();
+    const input = document.querySelector("#new_avatar").value;
+    updateAvatar(input);
+});
+
+cancel.addEventListener('click', () => {
+    window.location.href = href;
+})

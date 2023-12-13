@@ -16,6 +16,12 @@ export default async function bidOnListing() {
     try {
         const postRequest = await postMethod(bidData);
         const response = await fetch(bidURL, postRequest);
+
+        if (response.ok) {
+            location.reload();
+        } else {
+            alert("You must login to place a bid!");
+        }
     } catch (error) {
         console.log(error);
     }

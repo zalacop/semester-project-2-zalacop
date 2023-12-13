@@ -26,7 +26,7 @@ async function userInfo() {
 
     userAvatar.src = info.avatar;
     username.innerText = info.name;
-    const listings = info.listings
+    const listings = info.listings;
 
     if (listings !== undefined && listings !== null && listings !== "") {
         userListings.innerHTML = "";

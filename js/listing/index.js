@@ -4,6 +4,7 @@ import { urlListings } from "../utils/url.mjs";
 import createListingDescription from "../utils/render/listingDescription.mjs";
 import createBidInfoCard from "../utils/render/bidInfo.mjs";
 import bidOnListing from "./bid.mjs";
+import { setPageTitle } from "../utils/changeTitle.mjs";
 
 displayHeader();  
 
@@ -65,21 +66,5 @@ async function displayListing() {
 
 displayListing();
 
-async function changeTitle() {
-    const getTitle = await singleListingPost(id);
-
-    const title = getTitle.title;
-
-    function removeOuterTags(inputString) {
-        const parser = new DOMParser();
-        const listingTitle = parser.parseFromString(inputString, "text/html");
-        return listingTitle.body.innerText;
-    }
-
-    const inputString = `<p>${getTitle.title}</p>`;
-    const newTitle = removeOuterTags(inputString);
-
-    document.title = newTitle;
-}
-
-changeTitle();
+const listingInfo = await singleListingPost(id);
+setPageTitle(listingInfo.title);

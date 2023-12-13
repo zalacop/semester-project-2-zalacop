@@ -25,41 +25,61 @@ const bidsInfo =  "_bids=true"
 
 const listingURL = urlListings + "/" + id + "?" + sellerInfo + "&" + bidsInfo;
 
-async function singleListingPost() {
+async function singleListingPost(id) {
     try {
         productContainer.innerHTML = "";
         const response = await fetch(listingURL);
         const listing = await response.json();
-        const listingInfo = createListingDescription(listing);
-        const biddingInfo = createBidInfoCard(listing);
-
-        productContainer.appendChild(listingInfo);
-        productContainer.appendChild(biddingInfo);
-
-        const mainImage = document.querySelector(".main-img");
-        const previewContainer = document.querySelector(".preview");
-
-        previewContainer.addEventListener("click", function (event) {
-            const smallSrc = event.target.src;
-            const bigSrc = smallSrc.replace("small", "big");
-            mainImage.src = bigSrc;
-
-            const previewImages = document.querySelectorAll(".preview img");
-            previewImages.forEach((img) => img.classList.remove("active-img"));
-
-            event.target.classList.add("active-img");
-        });
-
-        const bidButton = document.querySelector("#bid-button");
-
-        bidButton.addEventListener('click', bidOnListing);
-
+        return listing;
     } catch (error) {
         console.log(error);
     }
 }
 
-singleListingPost();
+async function displayListing() {
+    const listing = await singleListingPost(id);
+    const listingInfo = createListingDescription(listing);
+    const biddingInfo = createBidInfoCard(listing);
+    
+    productContainer.appendChild(listingInfo);
+    productContainer.appendChild(biddingInfo);
 
+    const mainImage = document.querySelector(".main-img");
+    const previewContainer = document.querySelector(".preview");
 
+    previewContainer.addEventListener("click", function (event) {
+        const smallSrc = event.target.src;
+        const bigSrc = smallSrc.replace("small", "big");
+        mainImage.src = bigSrc;
 
+        const previewImages = document.querySelectorAll(".preview img");
+        previewImages.forEach((img) => img.classList.remove("active-img"));
+
+        event.target.classList.add("active-img");
+    });
+
+    const bidButton = document.querySelector("#bid-button");
+
+    bidButton.addEventListener('click', bidOnListing);
+}
+
+displayListing();
+
+async function changeTitle() {
+    const getTitle = await singleListingPost(id);
+
+    const title = getTitle.title;
+
+    function removeOuterTags(inputString) {
+        const parser = new DOMParser();
+        const listingTitle = parser.parseFromString(inputString, "text/html");
+        return listingTitle.body.innerText;
+    }
+
+    const inputString = `<p>${getTitle.title}</p>`;
+    const newTitle = removeOuterTags(inputString);
+
+    document.title = newTitle;
+}
+
+changeTitle();

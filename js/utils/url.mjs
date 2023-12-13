@@ -6,8 +6,7 @@ const register = "/register";
 const login = "/login";
 
 const profile = "/profiles";
-const listings = "/listings"
-
+const listings = "/listings";
 
 export const urlRegister = base + auctionEndpoints + authentication + register;
 export const urlLogin = base + auctionEndpoints + authentication + login;

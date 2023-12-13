@@ -1,14 +1,12 @@
 import displayHeader from "../utils/displayHeader.mjs";
 import logOut from "../utils/logout.mjs";
-import { getProfileInfo } from "../utils/request-methods/get.mjs";
 import createListingCard from "../utils/render/listingCard.mjs";
+import { setPageTitle, getUserInfoAndDisplayIt } from "../utils/changeTitle.mjs";
 
 displayHeader();
 
 const userAvatar = document.querySelector("#user_avatar");
 const username = document.querySelector(".name");
-const listingsContainer = document.querySelector("#listings_container");
-const userListings = document.querySelector(".listings-container");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -21,11 +19,16 @@ if (mobileLogoutButton && desktopLogoutButton) {
     mobileLogoutButton.addEventListener('click', logOut);
     desktopLogoutButton.addEventListener('click', logOut);
 }
-async function userInfo() {
-    const info = await getProfileInfo(id);
 
-    userAvatar.src = info.avatar;
-    username.innerText = info.name;
+const userInfo = await getUserInfoAndDisplayIt(id);
+setPageTitle(userInfo.name);
+
+
+const listingsContainer = document.querySelector("#listings_container");
+const userListings = document.querySelector(".listings-container");
+
+async function displayListing(info) {
+    //const info = await userInfo();
     const listings = info.listings;
 
     if (listings !== undefined && listings !== null && listings !== "") {
@@ -38,6 +41,12 @@ async function userInfo() {
         listingsContainer.innerHTML = "";
     }
 }
- 
-userInfo();
 
+displayListing(userInfo);
+
+const editButton = document.querySelector("button");
+const editButtonHref = `/profile/edit.html?profile=${id}`;
+
+editButton.addEventListener("click", function() {
+    window.location.href = editButtonHref;
+});

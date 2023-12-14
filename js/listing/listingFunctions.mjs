@@ -29,7 +29,7 @@ export function addImage() {
 const tagContainer = document.querySelector("#add-tag");
 
 export function addTag() {
-    if (inputCount < 2) {
+    if (tagCount < 2) {
         const tagParagraph = document.querySelector("#tag-paragraph");
         const tagButton = document.querySelector("#add-tag-btn");
         const firstInput = document.querySelector("#tag");
@@ -45,6 +45,7 @@ export function addTag() {
         tagContainer.appendChild(div);
 
         tagCount++; 
+
         if (tagCount === 2) {
             tagButton.style.display = "none";
         }

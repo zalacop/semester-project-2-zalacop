@@ -29,7 +29,7 @@ export default async function bidOnListing() {
         } else if (response.status === 401) {
             alert("You must log in to place a bid!");
         } else {
-            alert("An error occurred while processing your request!");
+            alert("An error occurred while processing your bid!");
         }
     } catch (error) {
         console.log(error);

@@ -1,6 +1,6 @@
 import displayHeader from "./utils/displayHeader.mjs";
 import logOut from "./utils/logout.mjs";
-import { displayListings } from "./homeFunctions.mjs";
+import { displayFilteredListings, displayListings } from "./homeFunctions.mjs";
 
 displayHeader();
 
@@ -27,5 +27,9 @@ function displayButton() {
 displayButton();
 
 displayListings();
+
+const search = document.querySelector("#search");
+
+search.addEventListener("keypress", () => displayFilteredListings(search.value));
 
 

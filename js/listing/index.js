@@ -5,6 +5,7 @@ import createListingDescription from "../utils/render/listingDescription.mjs";
 import createBidInfoCard from "../utils/render/bidInfo.mjs";
 import bidOnListing from "./bid.mjs";
 import { setPageTitle } from "../utils/changeTitle.mjs";
+import { deleteListing } from "./deleteListing.mjs";
 
 displayHeader();  
 
@@ -68,3 +69,7 @@ displayListing();
 
 const listingInfo = await singleListingPost(id);
 setPageTitle(listingInfo.title);
+
+const deleteButton = document.querySelector(".delete");
+
+deleteButton.addEventListener('click', deleteListing)

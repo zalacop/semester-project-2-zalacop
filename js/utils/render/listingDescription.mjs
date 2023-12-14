@@ -63,7 +63,7 @@ export default function createListingDescription(listingInfo) {
     paragraphElement.innerText = listingInfo.description;
 
     const deleteButton = document.createElement("button");
-    deleteButton.classList.add("btn", "px-4", "py-1", "my-5", "mx-auto", "d-flex", "cancel");
+    deleteButton.classList.add("btn", "px-4", "py-1", "my-5", "mx-auto", "d-flex", "cancel", "delete");
     deleteButton.innerText = "Delete";
 
     textDiv.appendChild(headingElement);

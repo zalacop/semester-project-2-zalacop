@@ -65,7 +65,10 @@ async function displayListing() {
     bidButton.addEventListener('click', bidOnListing);
 
     const deleteButton = document.querySelector(".delete");
-    deleteButton.addEventListener('click', deleteListing);
+
+    if (deleteButton !== null) {
+        deleteButton.addEventListener('click', deleteListing);
+    }
 }
 
 displayListing();

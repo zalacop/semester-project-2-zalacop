@@ -1,6 +1,6 @@
 import displayHeader from "../utils/displayHeader.mjs";
 import logOut from "../utils/logout.mjs";
-import { addImage, addTag } from "./listingFunctions.mjs";
+import { addImage, addNewListing, addTag } from "./listingFunctions.mjs";
 
 displayHeader();  
 
@@ -18,6 +18,6 @@ const tagButton = document.querySelector("#add-tag-btn");
 imageButton.addEventListener('click', addImage);
 tagButton.addEventListener('click', addTag);
 
+const postButton = document.querySelector("#post");
 
-
-
+postButton.addEventListener('click', (event) => addNewListing(event));

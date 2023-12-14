@@ -24,15 +24,15 @@
                         <div class="col-md-12 col-lg-6 my-4">
                             <div class="register_input mb-3 text-center">
                                 <p class="fs-5 m-0">Title*</p>
-                                <input type="text" class="form-control mx-auto">
+                                <input type="text" class="form-control mx-auto" id="title">
                             </div>
                             <div class="register_input mb-3 text-center">
                                 <p class="fs-5 m-0">The date of the end of the auction*</p>
-                                <input type="datetime-local" class="form-control mx-auto" placeholder="">
+                                <input type="date" class="form-control mx-auto" placeholder=""  id="end-date" value="">
                             </div>
                             <div class="register_input mb-3 text-center">
                                 <p class="fs-5 m-0">Description*</p>
-                                <textarea name="" id="" cols="30" rows="5" class="form-control mx-auto"></textarea>
+                                <textarea name="" id="description" cols="30" rows="5" class="form-control mx-auto"></textarea>
                             </div>
                             <div>
                                 <div class="register_input mb-3 text-center" id="add-tag">
@@ -45,13 +45,13 @@
                         <div class="col-md-12 col-lg-6 d-flex flex-column justify-content-start my-4 mx-auto">
                             <div class="register_input mb-3 text-center" id="add-image">
                                 <p class="fs-5 m-0" id="image-paragraph">Image URL*</p>
-                                <input type="url" class="form-control mx-auto" name="media">
+                                <input type="url" class="form-control mx-auto" name="media" id="image">
                             </div>
                             <button class="btn btn-outline-dark px-3 py-1 fs-6 mx-auto my-3 cta" id="add-image-btn">Add Image</button>
                         </div>
                     </div>
                     <div class="d-flex flex-column text-center">
-                        <button class="btn btn-outline-dark px-4 py-1 fs-5 mx-auto mb-4 cta">Post Listing</button>
+                        <button class="btn btn-outline-dark px-4 py-1 fs-5 mx-auto mb-4 cta" id="post">Post Listing</button>
                         <button class="btn px-3 py-1 mx-auto cancel">Cancel</button>
                     </div>
                 </div>

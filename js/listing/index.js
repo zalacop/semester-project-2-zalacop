@@ -63,13 +63,12 @@ async function displayListing() {
     const bidButton = document.querySelector("#bid-button");
 
     bidButton.addEventListener('click', bidOnListing);
+
+    const deleteButton = document.querySelector(".delete");
+    deleteButton.addEventListener('click', deleteListing);
 }
 
 displayListing();
 
 const listingInfo = await singleListingPost(id);
 setPageTitle(listingInfo.title);
-
-const deleteButton = document.querySelector(".delete");
-
-deleteButton.addEventListener('click', deleteListing)

@@ -62,13 +62,21 @@ export default function createListingDescription(listingInfo) {
     const paragraphElement = document.createElement("p");
     paragraphElement.innerText = listingInfo.description;
 
-    const deleteButton = document.createElement("button");
-    deleteButton.classList.add("btn", "px-4", "py-1", "my-5", "mx-auto", "d-flex", "cancel", "delete");
-    deleteButton.innerText = "Delete";
+    const username = localStorage.getItem('name');
+    const sellerName = listingInfo.seller.name;
 
-    textDiv.appendChild(headingElement);
-    textDiv.appendChild(paragraphElement);
-    textDiv.append(deleteButton);
+    if (username == sellerName) {
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("btn", "px-4", "py-1", "my-5", "mx-auto", "d-flex", "cancel", "delete");
+        deleteButton.innerText = "Delete";
+
+        textDiv.appendChild(headingElement);
+        textDiv.appendChild(paragraphElement);
+        textDiv.append(deleteButton);
+    } else {
+        textDiv.appendChild(headingElement);
+        textDiv.appendChild(paragraphElement);
+    }
 
     imageGallery.appendChild(textDiv);
 

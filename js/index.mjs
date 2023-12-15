@@ -1,6 +1,7 @@
 import displayHeader from "./utils/displayHeader.mjs";
 import logOut from "./utils/logout.mjs";
-import { displayFilteredListings, displayListings } from "./homeFunctions.mjs";
+import { displayListings } from "./homeFunctions.mjs";
+import { displayFilteredListings } from "./utils/search.mjs";
 
 displayHeader();
 

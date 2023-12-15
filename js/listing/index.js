@@ -6,6 +6,7 @@ import createBidInfoCard from "../utils/render/bidInfo.mjs";
 import bidOnListing from "./bid.mjs";
 import { setPageTitle } from "../utils/changeTitle.mjs";
 import { deleteListing } from "./deleteListing.mjs";
+import { displayFilteredListings } from "../utils/search.mjs";
 
 displayHeader();  
 
@@ -75,3 +76,7 @@ displayListing();
 
 const listingInfo = await singleListingPost(id);
 setPageTitle(listingInfo.title);
+
+const search = document.querySelector("#search");
+
+search.addEventListener("keypress", () => displayFilteredListings(search.value));

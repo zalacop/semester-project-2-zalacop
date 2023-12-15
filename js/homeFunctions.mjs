@@ -37,7 +37,7 @@ async function fetchListings() {
         return allListings;
 
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }
 
@@ -59,6 +59,6 @@ export async function displayListings() {
         });
 
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }

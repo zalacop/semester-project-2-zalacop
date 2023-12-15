@@ -13,6 +13,6 @@ export async function deleteMethod(listingId) {
         }
         return deleteData;
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }

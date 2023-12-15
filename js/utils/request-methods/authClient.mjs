@@ -11,11 +11,10 @@ export async function registerUser(userRegisterData) {
         }
         const response = await fetch(urlRegister, registerData);
         const data = await response.json();
-        console.log(data);
         return data;
 
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }
 
@@ -45,13 +44,12 @@ export async function loginUser(email, password) {
             localStorage.setItem('credits', data.credits)
 
             return data;
-
         } else {
             return null;
         }
 
-    } catch (error) {
-        console.log(error);
+    } catch (error) { 
         return null;
+        throw new Error("Oops, something went wrong!");
     }
 }

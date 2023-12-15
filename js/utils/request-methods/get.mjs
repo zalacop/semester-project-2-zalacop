@@ -12,7 +12,7 @@ export async function getMethod() {
         }
         return getData;
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }
 
@@ -31,6 +31,6 @@ export async function getProfileInfo(name,) {
             "credits": profile.credits
         };
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }

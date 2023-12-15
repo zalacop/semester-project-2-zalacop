@@ -13,7 +13,6 @@ async function processLoginUser(event) {
         const userName = localStorage.getItem('name');
         window.location.replace(`/profile/index.html?profile=${userName}`); 
     } else {
-        console.log("Login failed");
         alert("Email or password is incorrect!");
     }
 }

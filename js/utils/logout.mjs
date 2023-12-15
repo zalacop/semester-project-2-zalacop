@@ -4,6 +4,6 @@ export default function logOut() {
         window.localStorage.clear();
         window.location.replace('/index.html');
     } else {
-        console.log("Canceled logout!");
+        throw new Error("Canceled logout!");
     }
 }

@@ -18,6 +18,6 @@ export default async function putMethod(data) {
 
         return putData;
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }

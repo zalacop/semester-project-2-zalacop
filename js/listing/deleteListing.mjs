@@ -27,6 +27,6 @@ export async function deleteListing() {
         
         }
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }

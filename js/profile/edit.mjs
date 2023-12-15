@@ -45,7 +45,7 @@ async function updateAvatar(url) {
             alert("You did not update your avatar!");
         }
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }
 

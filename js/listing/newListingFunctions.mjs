@@ -4,31 +4,26 @@ import { urlListings } from "../utils/url.mjs";
 let inputCount = 0;
 let tagCount = 0;
 
-
-const imageButton = document.querySelector("#add-image-btn");
-const tagButton = document.querySelector("#add-tag-btn");
-
 export function addImage() {
     if (inputCount < 7) {
         const imageContainer = document.querySelector("#add-image");
         const imageButton = document.querySelector("#add-image-btn");
         const firstInput = document.querySelector("#image");
-        const imageParagraph = document.querySelector("#image-paragraph");
         const input = document.createElement("input");
         input.name = "media";
         input.type = "url";
         input.classList.add("form-control", "mx-auto", "my-3");
 
-        
         imageContainer.appendChild(firstInput);
         imageContainer.appendChild(input);
+        
         inputCount++;
 
         if (inputCount === 7) {
             imageButton.style.display = "none";
         }
     } else {
-        console.log("You cannot add more than 8 images!");
+        throw new Error("You cannot add more than 8 images!");
     }
 }
 
@@ -53,18 +48,16 @@ export function addTag() {
             tagButton.style.display = "none";
         }
     } else {
-        console.log("You cannot add more than 3 tags!");
+        throw new Error("You cannot add more than 3 tags!");
     }
 }
 
 async function newListing() {
-
     const title = document.querySelector("#title").value;
     const ends = document.querySelector("#end-date").value;
     const description = document.querySelector("#description").value;
     const tags = Array.from(document.querySelectorAll('input[name="tag"]')).map(tags => tags.value);
     const media = Array.from(document.querySelectorAll('input[name="media"]')).map(media => media.value); 
-
 
     const listingData = {
         title: title,
@@ -73,9 +66,7 @@ async function newListing() {
         tags: tags,
         media: media
     }
-    console.log(listingData)
 
-  
     try {
         const postRequest = await postMethod(listingData);
         const response = await fetch(urlListings, postRequest);
@@ -84,9 +75,8 @@ async function newListing() {
 
         return json;
     } catch(error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
-
 }
 
 export async function addNewListing(event) {
@@ -94,7 +84,6 @@ export async function addNewListing(event) {
     
     const response = await newListing();
     const id = response.id;
-    console.log(id);
 
     window.location.replace(`/listing/index.html?listing=${id}`)
 }
@@ -104,11 +93,9 @@ const form = document.querySelector("form")
 form.addEventListener("submit", event => {
     event.preventDefault();
     const tags = Array.from(document.querySelectorAll('input[name="tag"]')).map(tags => tags.value);
-    console.log(tags);
 });
 
 form.addEventListener("submit", event => {
     event.preventDefault();
     const media = Array.from(document.querySelectorAll('input[name="media"]')).map(media => media.value); 
-    console.log(media)
 });

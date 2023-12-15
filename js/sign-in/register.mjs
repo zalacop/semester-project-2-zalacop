@@ -11,7 +11,6 @@ function validateAndRegisterUser(event) {
     event.preventDefault();
 
     if(validateRegistration()) {
-        // if it returns true, call the api to register a user
         const user = {
             name: username.value,
             email: registerEmail.value,
@@ -23,7 +22,6 @@ function validateAndRegisterUser(event) {
         alert("Registration was successful, you can now Log in!");
     } else {
         alert("Registration was unsuccessful!");
-        console.log("Registration was unsuccessful!");
     }
 }
 

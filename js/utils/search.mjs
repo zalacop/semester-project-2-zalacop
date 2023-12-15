@@ -22,10 +22,9 @@ async function filterListings(tag) {
         const allListings = mapListings(listings);
         return allListings;
     } catch(error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }
-
 
 const listingContainer = document.querySelector(".listings-container");
 
@@ -51,7 +50,7 @@ export async function displayFilteredListings(tag) {
         });
 
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }
 

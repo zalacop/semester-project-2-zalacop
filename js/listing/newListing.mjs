@@ -14,7 +14,6 @@ if (mobileLogoutButton && desktopLogoutButton) {
 
 const imageButton = document.querySelector("#add-image-btn");
 const tagButton = document.querySelector("#add-tag-btn");
-const tags = document.querySelector("#add-tag");
 
 
 imageButton.addEventListener('click', addImage);

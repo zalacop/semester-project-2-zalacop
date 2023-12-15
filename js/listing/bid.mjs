@@ -36,6 +36,6 @@ export default async function bidOnListing() {
             alert("An error occurred while processing your bid!");
         }
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }

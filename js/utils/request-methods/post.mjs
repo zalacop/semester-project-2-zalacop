@@ -11,6 +11,6 @@ export async function postMethod(data) {
         }
         return postData;
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }

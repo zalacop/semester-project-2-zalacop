@@ -1,4 +1,4 @@
-import { urlProfile, urlListings } from "../url.mjs";
+import { urlProfile } from "../url.mjs";
 
 export async function getMethod() {
     try {
@@ -16,25 +16,12 @@ export async function getMethod() {
     }
 }
 
-export async function getProfileInfo(name) {
+export async function getProfileInfo(name,) {
     try {
-        const userProfileURL = urlProfile + "/" + name + "?_listings";
+        const userProfileURL = urlProfile + "/" + name + "?_listings=true";
         const getRequest = await getMethod();
         const response = await fetch(userProfileURL, getRequest);
         const profile = await response.json();
-
-        let getListings = profile._count.listings;
-
-        if (Array.isArray(getListings)) {
-            return getListings.map(item => ({
-                "id": item.id,
-                "title": item.title,
-                "media": item.media,
-                "endsAt": item.endsAt
-            }))
-        } else {
-            getListings = [];
-        }
 
         return {
             "name": profile.name,

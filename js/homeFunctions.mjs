@@ -17,7 +17,7 @@ export function mapListings(listings) {
             if(image.complete) {
                 return{
                     "id": listing.id,
-                    "image": imageSrc,
+                    "media": imageSrc,
                     "title": listing.title,
                     "description": listing.description,
                     "endsAt": listing.endsAt,

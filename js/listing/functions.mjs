@@ -21,7 +21,7 @@ export async function singleListingPost(id) {
         const listing = await response.json();
         return listing;
     } catch (error) {
-        console.log(error);
+        throw new Error("Oops, something went wrong!");
     }
 }
 

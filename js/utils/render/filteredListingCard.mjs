@@ -15,7 +15,7 @@ const imageDiv = document.createElement("div");
 imageDiv.classList.add("col-md-6", "d-flex", "align-items-center");
 
 const image = document.createElement("img");
-image.src = filteredListing.image;
+image.src = filteredListing.media;
 image.classList.add("img-fluid", "m-2");
 
 imageDiv.appendChild(image);

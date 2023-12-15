@@ -2,12 +2,13 @@ import displayHeader from "../utils/displayHeader.mjs";
 import logOut from "../utils/logout.mjs";
 import createListingCard from "../utils/render/listingCard.mjs";
 import { setPageTitle, getUserInfoAndDisplayIt } from "../utils/changeTitle.mjs";
+import { getProfileInfo } from "../utils/request-methods/get.mjs";
 
 displayHeader();
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-const id = params.get("profile");
+const username = params.get("profile");
 
 const mobileLogoutButton = document.querySelector("#mobileLogout");
 const desktopLogoutButton = document.querySelector("#desktopLogout");
@@ -17,30 +18,37 @@ if (mobileLogoutButton && desktopLogoutButton) {
     desktopLogoutButton.addEventListener('click', logOut);
 }
 
-const userInfo = await getUserInfoAndDisplayIt(id);
+const userInfo = await getUserInfoAndDisplayIt(username);
 setPageTitle(userInfo.name);
 
 const listingsContainer = document.querySelector("#listings_container");
 const userListings = document.querySelector(".listings-container");
 
-async function displayListing(info) {
-    const listings = info.listings;
+async function displayListing(name) {
+    const listingInfo = await getProfileInfo(username);
+    const listings = listingInfo.listings;
 
-    if (listings !== undefined && listings !== null && listings !== "") {
-        userListings.innerHTML = "";
+    if(listings) {
+        const yourListings = document.querySelector("#your-listings");
+        yourListings.style.display = "block";
+        const createHTML = listings.map((listing) => {
+            const listingCard = createListingCard(listing);
+            return listingCard;
+        });
 
-        listings.forEach(listing => {
-            createListingCard(listing[0]);
+        createHTML.forEach(listing => {
+            return userListings.appendChild(listing);
         });
     } else {
-        listingsContainer.innerHTML = "";
+        const yourListings = document.querySelector("#your-listings");
+        yourListings.style.display = "none";
     }
 }
 
-displayListing(userInfo);
+displayListing(username);
 
 const editButton = document.querySelector("button");
-const editButtonHref = `/profile/edit.html?profile=${id}`;
+const editButtonHref = `/profile/edit.html?profile=${username}`;
 
 editButton.addEventListener("click", function() {
     window.location.href = editButtonHref;

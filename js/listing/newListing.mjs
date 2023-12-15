@@ -1,6 +1,6 @@
 import displayHeader from "../utils/displayHeader.mjs";
 import logOut from "../utils/logout.mjs";
-import { addImage, addNewListing, addTag } from "./listingFunctions.mjs";
+import { addImage, addNewListing, addTag } from "./newListingFunctions.mjs";
 
 displayHeader();  
 

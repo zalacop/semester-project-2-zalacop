@@ -25,6 +25,10 @@ export default async function bidOnListing() {
         const response = await fetch(bidURL, postRequest);
 
         if (response.ok) {
+            const oldCredits = localStorage.getItem('credits');
+            const newCredits = oldCredits - input;
+            localStorage.removeItem('credits');
+            localStorage.setItem('credits', newCredits);
             location.reload();
         } else if (response.status === 401) {
             alert("You must log in to place a bid!");

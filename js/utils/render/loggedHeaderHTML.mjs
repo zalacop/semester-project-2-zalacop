@@ -27,11 +27,6 @@ export default function createLoggedInUserHeader(userInfo) {
     const navDiv = document.createElement("div");
     navDiv.classList.add("d-flex", "align-items-center");
 
-    const totalIcon = document.createElement("img");
-    totalIcon.src = "/images/klobuk s kovanci.svg";
-    totalIcon.alt = "Icon for showing you the total";
-    totalIcon.classList.add("total", "d-md-none");
-
     const dropdown = document.createElement("div");
     dropdown.classList.add("dropdown", "d-md-none");
 
@@ -74,7 +69,6 @@ export default function createLoggedInUserHeader(userInfo) {
     dropdown.appendChild(avatarHeader);
     dropdown.appendChild(ul);
 
-    navDiv.appendChild(totalIcon);
     navDiv.appendChild(dropdown);
 
     header.appendChild(navDiv);
@@ -113,14 +107,6 @@ export default function createLoggedInUserHeader(userInfo) {
     logoutLinkDesktop.innerText = "Log Out";
     desktopLogout.appendChild(logoutLinkDesktop);
 
-    const desktopTotal = document.createElement("li");
-    desktopTotal.classList.add("nav-item", "fs-5", "text-transform");
-    const desktopTotalIcon = document.createElement("img");
-    desktopTotalIcon.src = "/images/klobuk s kovanci.svg";
-    desktopTotalIcon.alt = "Icon for showing you the total";
-    desktopTotalIcon.classList.add("total");
-    desktopTotal.appendChild(desktopTotalIcon);
-
     const desktopAvatar = document.createElement("li");
     desktopAvatar.classList.add("nav-item");
     const avatarImg = document.createElement("img");
@@ -132,7 +118,6 @@ export default function createLoggedInUserHeader(userInfo) {
     desktopUl.appendChild(desktopListings);
     desktopUl.appendChild(desktopProfile);
     desktopUl.appendChild(desktopLogout);
-    desktopUl.appendChild(desktopTotal);
     desktopUl.appendChild(desktopAvatar);
 
     desktopDiv.appendChild(desktopUl);

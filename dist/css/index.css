@@ -12030,7 +12030,7 @@ footer {
 }
 
 .logo {
-  width: 300px;
+  width: 250px;
 }
 
 h1, .h1,
@@ -12064,7 +12064,7 @@ li,
 }
 
 .total {
-  width: 70px;
+  width: 50px;
 }
 
 header a,
@@ -12087,6 +12087,20 @@ footer {
 .footer-logo {
   max-width: 250px;
   min-width: 150px;
+}
+
+.credits {
+  background: rgba(19, 31, 53, 0.9);
+  min-width: 100%;
+}
+
+.credits div {
+  width: 100px;
+  padding-left: 50px;
+}
+
+.credits p {
+  color: #EAF3F6;
 }
 
 .search {

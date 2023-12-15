@@ -26,3 +26,7 @@ setPageTitle(listingInfo.title);
 const search = document.querySelector("#search");
 
 search.addEventListener("keypress", () => displayFilteredListings(search.value));
+
+const showCredits = document.querySelector("#total-credits");
+const getCredits = localStorage.getItem('credits');
+showCredits.innerText = getCredits;

@@ -3,6 +3,7 @@ import logOut from "../utils/logout.mjs";
 import createListingCard from "../utils/render/listingCard.mjs";
 import { setPageTitle, getUserInfoAndDisplayIt } from "../utils/changeTitle.mjs";
 import { getProfileInfo } from "../utils/request-methods/get.mjs";
+import displayCredits from "../utils/displayCredits.mjs";
 
 displayHeader();
 
@@ -53,3 +54,5 @@ const editButtonHref = `/profile/edit.html?profile=${username}`;
 editButton.addEventListener("click", function() {
     window.location.href = editButtonHref;
 });
+
+displayCredits();

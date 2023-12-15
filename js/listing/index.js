@@ -3,6 +3,7 @@ import logOut from "../utils/logout.mjs";
 import { setPageTitle } from "../utils/changeTitle.mjs";
 import { displayFilteredListings } from "../utils/search.mjs";
 import { displaySingleListing, singleListingPost } from "./functions.mjs";
+import displayCredits from "../utils/displayCredits.mjs";
 
 displayHeader();  
 
@@ -27,6 +28,4 @@ const search = document.querySelector("#search");
 
 search.addEventListener("keypress", () => displayFilteredListings(search.value));
 
-const showCredits = document.querySelector("#total-credits");
-const getCredits = localStorage.getItem('credits');
-showCredits.innerText = getCredits;
+displayCredits();

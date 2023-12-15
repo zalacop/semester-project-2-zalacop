@@ -4,6 +4,10 @@ import { urlListings } from "../utils/url.mjs";
 let inputCount = 0;
 let tagCount = 0;
 
+
+const imageButton = document.querySelector("#add-image-btn");
+const tagButton = document.querySelector("#add-tag-btn");
+
 export function addImage() {
     if (inputCount < 7) {
         const imageContainer = document.querySelector("#add-image");
@@ -15,9 +19,9 @@ export function addImage() {
         input.type = "url";
         input.classList.add("form-control", "mx-auto", "my-3");
 
-        imageContainer.appendChild(input);
+        
         imageContainer.appendChild(firstInput);
-
+        imageContainer.appendChild(input);
         inputCount++;
 
         if (inputCount === 7) {
@@ -32,7 +36,6 @@ const tagContainer = document.querySelector("#add-tag");
 
 export function addTag() {
     if (tagCount < 2) {
-        const tagParagraph = document.querySelector("#tag-paragraph");
         const tagButton = document.querySelector("#add-tag-btn");
         const firstInput = document.querySelector("#tag");
         const input = document.createElement("input");
@@ -41,9 +44,8 @@ export function addTag() {
 
         input.classList.add("form-control", "mx-auto", "my-3");
 
-        tagContainer.appendChild(input);
-
         tagContainer.appendChild(firstInput);
+        tagContainer.appendChild(input);
 
         tagCount++; 
 
@@ -55,15 +57,15 @@ export function addTag() {
     }
 }
 
-const title = document.querySelector("#title").value;
-const ends = document.querySelector("#end-date").value;
-const description = document.querySelector("#description").value;
-const tags = Array.from(document.querySelectorAll('input[name="tag"]'))
-                .map(tags => tags.value);
-const media = Array.from(document.querySelectorAll('input[name="media"]'))
-                .map(media => media.value);
-
 async function newListing() {
+
+    const title = document.querySelector("#title").value;
+    const ends = document.querySelector("#end-date").value;
+    const description = document.querySelector("#description").value;
+    const tags = Array.from(document.querySelectorAll('input[name="tag"]')).map(tags => tags.value);
+    const media = Array.from(document.querySelectorAll('input[name="media"]')).map(media => media.value); 
+
+
     const listingData = {
         title: title,
         endsAt: ends,
@@ -73,11 +75,13 @@ async function newListing() {
     }
     console.log(listingData)
 
+  
     try {
         const postRequest = await postMethod(listingData);
         const response = await fetch(urlListings, postRequest);
         const json = await response.json();
         console.log(json);
+
         return json;
     } catch(error) {
         console.log(error);
@@ -87,17 +91,24 @@ async function newListing() {
 
 export async function addNewListing(event) {
     event.preventDefault();
+    
     const response = await newListing();
     const id = response.id;
     console.log(id);
 
-    const newListingData = {
-        title: title.value = '',
-        endsAt: ends.value = '',
-        description: description.value = '',
-        tags: tags.value = [],
-        media: media.value = []
-    }
-
     window.location.replace(`/listing/index.html?listing=${id}`)
 }
+
+const form = document.querySelector("form")
+
+form.addEventListener("submit", event => {
+    event.preventDefault();
+    const tags = Array.from(document.querySelectorAll('input[name="tag"]')).map(tags => tags.value);
+    console.log(tags);
+});
+
+form.addEventListener("submit", event => {
+    event.preventDefault();
+    const media = Array.from(document.querySelectorAll('input[name="media"]')).map(media => media.value); 
+    console.log(media)
+});

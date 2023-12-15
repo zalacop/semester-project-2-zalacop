@@ -19,6 +19,7 @@ function validateAndRegisterUser(event) {
         }
 
         const registeredUser = registerUser(user);
+        window.location.replace("/sign-in/index.html");
         alert("Registration was successful, you can now Log in!");
     } else {
         alert("Registration was unsuccessful!");

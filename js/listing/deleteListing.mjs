@@ -10,15 +10,21 @@ const deleteButton = document.querySelector(".delete");
 
 export async function deleteListing() {
     try {
-        const deleteRequest = await deleteMethod();
-        const response = await fetch(deleteURL, deleteRequest);
+        const userConfirmed = window.confirm("Are you sure you want to delete this listing?");
+        
+        if (userConfirmed) {
+            const deleteRequest = await deleteMethod();
+            const response = await fetch(deleteURL, deleteRequest);
 
-        if(response.ok) {
-            alert("You have successfully deleted this listing!");
-            window.location.replace("/index.html");
+            if (response.ok) {
+                alert("You have successfully deleted this listing!");
+                window.location.replace("/index.html");
+            } else {
+                alert("You can't delete this post!");
+            }
         } else {
-            console.log("You can't delete this post!");
-            alert("You can't delete this post!");
+            alert("You did not delete this listing!");
+        
         }
     } catch (error) {
         console.log(error);

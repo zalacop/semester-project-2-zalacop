@@ -10,6 +10,10 @@
     border: 1px solid $dark;
 }
 
+.alert {
+    width: clamp(250px, 50vw, 270px);
+}
+
 .hyperlink {
     text-decoration: underline;
     cursor: pointer;
@@ -26,3 +30,4 @@
   width: 20px;
   height: 20px;
 }
+

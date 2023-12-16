@@ -11981,6 +11981,10 @@ img.active-img {
   border: 1px solid #131F35;
 }
 
+.alert {
+  width: clamp(250px, 50vw, 270px);
+}
+
 .hyperlink {
   text-decoration: underline;
   cursor: pointer;

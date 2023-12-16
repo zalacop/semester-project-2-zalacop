@@ -44,6 +44,7 @@ export default function createUnregisteredHeader() {
 
     const mobileLogin = document.createElement('li');
     const loginLinkMobile = document.createElement("a");
+    loginLinkMobile.href = "/sign-in/index.html";
     loginLinkMobile.classList.add("dropdown-item");
     loginLinkMobile.innerText = "Log In";
     mobileLogin.appendChild(loginLinkMobile);

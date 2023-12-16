@@ -11,7 +11,7 @@
     <script src="/js/sign-in/login.mjs" type="module"></script>
 </head>
 <body>
-    <header class="container d-flex justify-content-between align-items-center px-5 w-100">
+    <header class="d-flex justify-content-between align-items-center px-5 w-100">
         <div class="m-3 mt-4">
             <a href="/index.html">
                 <img src="/images/mad bids(1).svg" alt="Mad Bids logo" class="logo w-sm-50">
@@ -24,11 +24,11 @@
             <h2>Log in</h2>
             <div class="mb-3 register_input">
                 <label for="email" class="mb-2 fs-5">Email</label>
-                <input type="email" id="login_email" class="form-control" autocomplete="off" placeholder="" required />
+                <input type="email" id="login_email" class="form-control" autocomplete="off" placeholder="" name="email" />
             </div>
             <div class="mb-3 register_input">
                 <label for="password" class="mb-2 fs-5">Password</label>
-                <input type="password" id="login_password" class="form-control" minlength="8" autocomplete="off" placeholder="" required />
+                <input type="password" id="login_password" class="form-control" minlength="8" autocomplete="off" placeholder="" name="password" required />
             </div>
             <button type="submit" id="login_button" class="btn btn-outline-dark px-5 py-1 fs-5 cta">Log in</button>
             <div class="d-flex align-items-center gap-2 new-account m-3">

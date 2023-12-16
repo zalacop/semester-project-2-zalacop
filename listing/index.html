@@ -14,26 +14,45 @@
     <header>
         
     </header>
-    <main>
+    <main class="d-flex flex-column justify-content-center align-items-center mx-auto">
         <div class="row d-flex credits justify-content-start align-self-cente w-100 credits m-0">
-        <div class="col-md-4 d-flex">
-            <img src="/images/klobuk s kovanci.svg" alt="Icon for showing the total" class="total">
-            <p class="m-auto" id="total-credits"></p>
+            <div class="col-md-4 d-flex">
+                <img src="/images/klobuk s kovanci.svg" alt="Icon for showing the total" class="total">
+                <p class="m-auto" id="total-credits"></p>
+            </div>
         </div>
-    </div>
 
         <div class="input-group h-25 m-0 px-2 py-4 d-flex justify-content-center search">
             <span class="input-group-text"><i class="fa-solid fa-magnifying-glass fs-3"></i></span>
             <input type="search" name="search" class="form-control" autocomplete="off" placeholder="" id="search">
         </div>
-        <div class="container-fluid filter-options p-2">
-            <ul class="d-flex justify-content-around m-0">
-                <li class="nav-item m-0 fs-5">Books</li>
-                <li class="nav-item m-0 fs-5">Watches</li>
-                <li class="nav-item m-0 fs-5">Whiskey</li>
-                <li class="nav-item m-0 fs-5">Clothes</li>
-            </ul>
+
+        <div class="filter-options m-0 w-100">
+            <div class="d-md-none text-center">
+                <div class="dropdown d-md-none mx-auto">
+                    <span class="drospandown-toggle my-2 d-flex align-items-center justify-content-center px-auto py-0 fs-5" role="button" data-bs-toggle="dropdown" id="menu">Tea Party Menu</span>
+                    <ul class="dropdown-menu text-center dropdown-menu-center">
+                        <li class="dropdown-item" id="active-mobile">Active Listings</li>
+                        <li class="dropdown-item" id="watch-mobile">Watches</li>
+                        <li class="dropdown-item" id="food-mobile">Food</li>
+                        <li class="dropdown-item" id="alcohol-mobile">Alcohol</li>
+                        <li class="dropdown-item" id="animal-mobile">Animals</li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-md text-center align-items-center">
+                <div class="collapse navbar-collapse">
+                    <ul class="d-flex justify-content-around m-0 w-100 px-5">
+                        <li class="nav-item fs-5 text-transform" id="active-desktop"><a href="#">Active Listings</a></li>
+                        <li class="nav-item fs-5 text-transform" id="watch-desktop"><a href="#">Watches</a></li>
+                        <li class="nav-item fs-5 text-transform" id="food-desktop"><a href="#">Food</a></li>
+                        <li class="nav-item fs-5 text-transform" id="alcohol-desktop"><a href="#">Alcohol</a></li>
+                        <li class="nav-item fs-5 text-transform" id="animal-desktop"><a href="#">Animals</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
+
         <div class="listings-container mt-5">
                 
         </div>

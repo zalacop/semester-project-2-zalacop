@@ -54,4 +54,37 @@ export async function displayFilteredListings(tag) {
     }
 }
 
+const getActiveListings = "?_active=true"
+const activeListingsURL = urlListings + getActiveListings;
 
+async function fetchActiveListings() {
+    try {
+        const response = await fetch(activeListingsURL);
+        const listings = await response.json();
+        const activeListings = mapListings(listings);
+        return activeListings;
+
+    } catch (error) {
+        throw new Error("Oops, something went wrong!");
+    }
+}
+
+export async function displayActiveListings() {
+    try {
+        listingContainer.innerHTML = "";
+
+        const getListings = await fetchActiveListings();
+
+        const createHTML = getListings.map((listing) => {
+            const listingCard = createFilteredListingCard(listing);
+            return listingCard;
+        });
+
+        createHTML.forEach(listing => {
+            return listingContainer.appendChild(listing);
+        });
+
+    } catch (error) {
+        throw new Error("Oops, something went wrong!");
+    }
+}

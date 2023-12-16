@@ -39,8 +39,14 @@ label,
 nav a,
 .cta,
 li,
-.dropdown-item {
+.dropdown-item,
+#menu {
     font-family: 'Poppins', sans-serif;
+}
+
+#menu {
+    color: $light;
+    text-transform: uppercase;
 }
 
 .avatar {
@@ -104,10 +110,16 @@ input {
 .filter-options {
     background: $info;
     color: $light;
+    height: 50px;
 }
 
 .filter-options li {
     display: inline-block;
+}
+
+.filter-options a {
+    color: $light;
+    text-decoration: none;
 }
 
 .cta {

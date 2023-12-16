@@ -1,9 +1,10 @@
 import createListingCard from "./utils/render/listingCard.mjs";
+import { displayFilteredListings } from "./utils/search.mjs";
 import { urlListings } from "./utils/url.mjs";
 
 const getLatestListings = "?sort=created";
 
-const activeListingsURL = urlListings + getLatestListings;
+const latestListingsURL = urlListings + getLatestListings;
 
 export function mapListings(listings) {
     return listings
@@ -31,7 +32,7 @@ export function mapListings(listings) {
 
 async function fetchListings() {
     try {
-        const response = await fetch(activeListingsURL);
+        const response = await fetch(latestListingsURL);
         const listings = await response.json();
         const allListings = mapListings(listings);
         return allListings;

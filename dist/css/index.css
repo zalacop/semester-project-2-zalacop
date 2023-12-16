@@ -12055,8 +12055,14 @@ label,
 nav a,
 .cta,
 li,
-.dropdown-item {
+.dropdown-item,
+#menu {
   font-family: "Poppins", sans-serif;
+}
+
+#menu {
+  color: #EAF3F6;
+  text-transform: uppercase;
 }
 
 .avatar {
@@ -12121,10 +12127,16 @@ input {
 .filter-options {
   background: #03658C;
   color: #EAF3F6;
+  height: 50px;
 }
 
 .filter-options li {
   display: inline-block;
+}
+
+.filter-options a {
+  color: #EAF3F6;
+  text-decoration: none;
 }
 
 .cta {

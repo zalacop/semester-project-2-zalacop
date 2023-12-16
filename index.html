@@ -28,13 +28,30 @@
             <input type="search" name="search" class="form-control" autocomplete="off" placeholder="" id="search">
         </div>
 
-        <div class="container-fluid filter-options p-2">
-            <ul class="d-flex justify-content-around m-0">
-                <li class="nav-item m-0 fs-5">Books</li>
-                <li class="nav-item m-0 fs-5">Watches</li>
-                <li class="nav-item m-0 fs-5">Whiskey</li>
-                <li class="nav-item m-0 fs-5">Clothes</li>
-            </ul>
+        <div class="filter-options m-0 w-100">
+            <div class="d-md-none text-center">
+                <div class="dropdown d-md-none mx-auto">
+                    <span class="drospandown-toggle my-2 d-flex align-items-center justify-content-center px-auto py-0 fs-5" role="button" data-bs-toggle="dropdown" id="menu">Tea Party Menu</span>
+                    <ul class="dropdown-menu text-center dropdown-menu-center">
+                        <li class="dropdown-item" id="active-mobile">Active Listings</li>
+                        <li class="dropdown-item" id="watch-mobile">Watches</li>
+                        <li class="dropdown-item" id="food-mobile">Food</li>
+                        <li class="dropdown-item" id="alcohol-mobile">Alcohol</li>
+                        <li class="dropdown-item" id="animal-mobile">Animals</li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-md text-center align-items-center">
+                <div class="collapse navbar-collapse">
+                    <ul class="d-flex justify-content-around m-0 w-100 px-5">
+                        <li class="nav-item fs-5 text-transform" id="active-desktop"><a href="#">Active Listings</a></li>
+                        <li class="nav-item fs-5 text-transform" id="watch-desktop"><a href="#">Watches</a></li>
+                        <li class="nav-item fs-5 text-transform" id="food-desktop"><a href="#">Food</a></li>
+                        <li class="nav-item fs-5 text-transform" id="alcohol-desktop"><a href="#">Alcohol</a></li>
+                        <li class="nav-item fs-5 text-transform" id="animal-desktop"><a href="#">Animals</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
 
         <div id="new_listing">

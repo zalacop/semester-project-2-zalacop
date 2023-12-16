@@ -37,7 +37,7 @@ function validateEmail(email) {
 }
 
 function validateUsername(user) {
-    const regExUsername = /^[a-z0-9_]{4,20}$/;
+    const regExUsername = /^[a-zA-Z0-9_]{4,20}$/;
 
     const patternMatchesUsername = regExUsername.test(user);
 

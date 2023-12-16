@@ -1,4 +1,4 @@
-import { mapListings } from "../homeFunctions.mjs";
+import { fetchListings, mapListings } from "../homeFunctions.mjs";
 import { createFilteredListingCard } from "./render/filteredListingCard.mjs";
 import { urlListings } from "./url.mjs";
 
@@ -46,7 +46,7 @@ export async function displayFilteredListings(tag) {
         });
 
         createHTML.forEach(listing => {
-            return listingContainer.appendChild(listing);
+            listingContainer.appendChild(listing);
         });
 
     } catch (error) {
@@ -54,8 +54,40 @@ export async function displayFilteredListings(tag) {
     }
 }
 
+export async function searchByTitle(title) {
+    try {
+        if (latest) {
+            latest.innerHTML = "";
+        }
+        if (viewListingContainer) {
+            viewListingContainer.innerHTML = "";
+        }
+        listingContainer.innerHTML = "";
+
+        const allListings = await fetchListings();
+
+        const filteredListings = allListings.filter(listing => {
+            return listing.title.toLowerCase().includes(title.toLowerCase());
+        });
+
+        const createHTML = filteredListings.map(listing => {
+            const listingCard = createFilteredListingCard(listing);
+            return listingCard;
+        });
+
+        createHTML.forEach(listing => {
+            listingContainer.appendChild(listing);
+        });
+
+    } catch (error) {
+        throw new Error("Oops, something went wrong!");
+    }
+}
+
+
 const getActiveListings = "?_active=true"
 const activeListingsURL = urlListings + getActiveListings;
+const productContainer = document.querySelector(".product-container");
 
 async function fetchActiveListings() {
     try {
@@ -71,6 +103,10 @@ async function fetchActiveListings() {
 
 export async function displayActiveListings() {
     try {
+        if(productContainer) {
+            productContainer.innerHTML = "";
+;        }
+
         listingContainer.innerHTML = "";
 
         const getListings = await fetchActiveListings();
@@ -81,7 +117,7 @@ export async function displayActiveListings() {
         });
 
         createHTML.forEach(listing => {
-            return listingContainer.appendChild(listing);
+            listingContainer.appendChild(listing);
         });
 
     } catch (error) {

@@ -25,7 +25,7 @@ function loadImage(listing) {
     });
 }
 
-async function fetchListings() {
+export async function fetchListings() {
     try {
         const response = await fetch(latestListingsURL);
         const listings = await response.json();

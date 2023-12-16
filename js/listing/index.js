@@ -1,7 +1,7 @@
 import displayHeader from "../utils/displayHeader.mjs";
 import logOut from "../utils/logout.mjs";
 import { setPageTitle } from "../utils/changeTitle.mjs";
-import { displayActiveListings, displayFilteredListings } from "../utils/search.mjs";
+import { displayActiveListings, displayFilteredListings, searchByTitle } from "../utils/search.mjs";
 import { displaySingleListing, singleListingPost } from "./functions.mjs";
 import displayCredits from "../utils/displayCredits.mjs";
 
@@ -25,8 +25,10 @@ const listingInfo = await singleListingPost(id);
 setPageTitle(listingInfo.title);
 
 const search = document.querySelector("#search");
+const searchIcon = document.querySelector(".fa-magnifying-glass");
 
-search.addEventListener("keypress", () => displayFilteredListings(search.value));
+search.addEventListener("keypress", () => searchByTitle(search.value));
+searchIcon.addEventListener("click", () => searchByTitle(search.value));
 
 displayCredits();
 

@@ -35,8 +35,6 @@ displayListings();
 const search = document.querySelector("#search");
 const searchIcon = document.querySelector(".fa-magnifying-glass");
 
-// search.addEventListener("keypress", () => displayFilteredListings(search.value));
-// searchIcon.addEventListener("click", () => displayFilteredListings(search.value));
 search.addEventListener("keypress", () => searchByTitle(search.value));
 searchIcon.addEventListener("click", () => searchByTitle(search.value));
 

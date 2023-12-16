@@ -7,7 +7,7 @@ const username = document.querySelector("#username");
 const registerPassword = document.querySelector("#register_password");
 const avatar = document.querySelector("#avatar_url");
 
-function validateAndRegisterUser(event) {
+async function validateAndRegisterUser(event) {
     event.preventDefault();
 
     if(validateRegistration()) {
@@ -18,9 +18,9 @@ function validateAndRegisterUser(event) {
             avatar: avatar.value
         }
 
-        const registeredUser = registerUser(user);
-        window.location.replace("/sign-in/index.html");
+        const registeredUser = await registerUser(user);
         alert("Registration was successful, you can now Log in!");
+        window.location.replace("/sign-in/index.html");
     } else {
         alert("Registration was unsuccessful!");
     }

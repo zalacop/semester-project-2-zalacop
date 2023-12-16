@@ -12027,6 +12027,7 @@ header,
 footer {
   background-color: rgba(19, 31, 53, 0.85);
   min-width: 100%;
+  max-width: 1300px;
 }
 
 .logo {
@@ -12186,6 +12187,10 @@ input {
 .card a {
   color: #131F35;
   text-decoration: none;
+}
+
+.filter {
+  max-width: 1000px;
 }
 
 .filter img {

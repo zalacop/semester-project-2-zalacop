@@ -91,12 +91,13 @@ export async function addNewListing(event) {
     if (!title || !endDate || !description || !tag || !image) {
         alert("Please fill out all fields.");
         return;
+    } else {
+        const response = await newListing();
+        const id = response.id;
+    
+        window.location.replace(`/listing/index.html?listing=${id}`);
     }
 
-    const response = await newListing();
-    const id = response.id;
-
-    window.location.replace(`/listing/index.html?listing=${id}`)
 }
 
 const form = document.querySelector("form")

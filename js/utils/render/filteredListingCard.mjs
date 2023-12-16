@@ -3,7 +3,7 @@ const div = document.createElement("div");
 div.classList.add("mb-5");
 
 const cardDiv = document.createElement("div");
-cardDiv.classList.add("card", "filter", "w-75", "mx-auto");
+cardDiv.classList.add("card", "filter", "mx-auto");
 
 const listingLink = document.createElement("a");
 listingLink.href = `/listing/index.html?listing=${filteredListing.id}`;

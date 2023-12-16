@@ -1,5 +1,4 @@
 import createListingCard from "./utils/render/listingCard.mjs";
-import { displayFilteredListings } from "./utils/search.mjs";
 import { urlListings } from "./utils/url.mjs";
 
 const getLatestListings = "?sort=created";
@@ -7,27 +6,23 @@ const getLatestListings = "?sort=created";
 const latestListingsURL = urlListings + getLatestListings;
 
 export function mapListings(listings) {
-    return listings
+    const listingsWithLoadedImages = listings
         .filter((listing) => listing.media && listing.media.length > 0)
-        .map((listing) => {
-            const imageSrc = listing.media[0];
+        .map((listing) => loadImage(listing)
+            .then(() => listing)
+            .catch(() => null));
 
-            const image = new Image();
-            image.src = imageSrc;
+    return Promise.all(listingsWithLoadedImages)
+        .then((listings) => listings.filter((listing) => listing !== null));
+}
 
-            if(image.complete) {
-                return{
-                    "id": listing.id,
-                    "media": imageSrc,
-                    "title": listing.title,
-                    "description": listing.description,
-                    "endsAt": listing.endsAt,
-                    "tags": listing.tags
-            }} else {
-                return null;
-            }
-        })
-        .filter((listing) => listing !== null);
+function loadImage(listing) {
+    return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.onload = resolve;
+        image.onerror = reject;
+        image.src = listing.media[0];
+    });
 }
 
 async function fetchListings() {

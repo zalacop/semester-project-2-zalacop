@@ -82,6 +82,17 @@ async function newListing() {
 export async function addNewListing(event) {
     event.preventDefault();
     
+    const title = document.querySelector("#title").value;
+    const endDate = document.querySelector("#end-date").value;
+    const description = document.querySelector("#description").value;
+    const tag = document.querySelector("#tag").value;
+    const image = document.querySelector("#image").value;
+
+    if (!title || !endDate || !description || !tag || !image) {
+        alert("Please fill out all fields.");
+        return;
+    }
+
     const response = await newListing();
     const id = response.id;
 

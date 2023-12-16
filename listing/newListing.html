@@ -24,20 +24,20 @@
                         <div class="col-md-12 col-lg-6 my-4">
                             <div class="register_input mb-3 text-center">
                                 <p class="fs-5 m-0">Title*</p>
-                                <input type="text" class="form-control mx-auto" id="title">
+                                <input type="text" class="form-control mx-auto" id="title" required>
                             </div>
                             <div class="register_input mb-3 text-center">
                                 <p class="fs-5 m-0">The date of the end of the auction*</p>
-                                <input type="date" class="form-control mx-auto" placeholder=""  id="end-date" value="">
+                                <input type="date" class="form-control mx-auto" placeholder=""  id="end-date" value="" required>
                             </div>
                             <div class="register_input mb-3 text-center">
                                 <p class="fs-5 m-0">Description*</p>
-                                <textarea name="" id="description" cols="30" rows="5" class="form-control mx-auto"></textarea>
+                                <textarea name="" id="description" cols="30" rows="5" class="form-control mx-auto" required></textarea>
                             </div>
                             <div>
                                 <div class="register_input mb-3 text-center" id="add-tag">
                                     <p class="fs-5 m-0" id="tag-paragraph">Tag*</p>
-                                    <input type="text" class="form-control mx-auto" name="tag" id="tag">
+                                    <input type="text" class="form-control mx-auto" name="tag" id="tag" required>
                                 </div>
                                 <button class="btn btn-outline-dark px-3 py-1 fs-6 mx-auto my-3 cta" id="add-tag-btn">Add tag</button>
                             </div>
@@ -45,7 +45,7 @@
                         <div class="col-md-12 col-lg-6 d-flex flex-column justify-content-start my-4 mx-auto">
                             <div class="register_input mb-3 text-center" id="add-image">
                                 <p class="fs-5 m-0" id="image-paragraph">Image URL*</p>
-                                <input type="url" class="form-control mx-auto" name="media" id="image">
+                                <input type="url" class="form-control mx-auto" name="media" id="image" required>
                             </div>
                             <button class="btn btn-outline-dark px-3 py-1 fs-6 mx-auto my-3 cta" id="add-image-btn">Add Image</button>
                         </div>

@@ -56,7 +56,7 @@ export async function displayListings() {
         });
 
         createHTML.forEach(listing => {
-            return listingContainer.appendChild(listing);
+            listingContainer.appendChild(listing);
         });
 
     } catch (error) {

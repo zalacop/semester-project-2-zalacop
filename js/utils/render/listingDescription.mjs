@@ -4,11 +4,10 @@ function mapItem(array) {
 
 function createImage(src) {
     const imageDiv = document.createElement("div");
-    imageDiv.classList.add("col-6", "col-md-4", "col-lg-3", "mb-2");
+    imageDiv.classList.add("col-6", "col-md-4", "col-lg-3", "mb-2", "mx-0");
 
     const imageElement = document.createElement("img");
     imageElement.src = src;
-    imageElement.classList.add("preview-img", "m-3");
 
     imageDiv.appendChild(imageElement);
 
@@ -35,7 +34,7 @@ export default function createListingDescription(listingInfo) {
     preview.classList.add("preview", "mx-auto", "mb-5", "text-center");
 
     const rowDiv = document.createElement("div");
-    rowDiv.classList.add("row", "justify-content-center");
+    rowDiv.classList.add("row", "justify-content-center", "preview_images");
 
     const images = mapItem(listingInfo.media);
 

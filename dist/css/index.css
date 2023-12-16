@@ -11861,8 +11861,14 @@ a {
   font-family: "Poppins", sans-serif;
 }
 
+#view-listing {
+  max-width: 90%;
+}
+
 .product-container {
   max-width: 1050px;
+  min-width: 300px;
+  margin: 0 5% !important;
 }
 
 .main-img {
@@ -11874,7 +11880,7 @@ a {
 
 .images-gallery {
   max-width: 560px;
-  min-width: 320px;
+  min-width: 300px;
   border: 2px solid #03658C;
 }
 
@@ -11907,7 +11913,7 @@ img.active-img {
 
 .auction-info {
   max-width: 400px;
-  min-width: 320px;
+  min-width: 280px;
   height: max-content;
   border: 2px solid #FFDC13;
 }
@@ -12030,8 +12036,6 @@ body {
 header,
 footer {
   background-color: rgba(19, 31, 53, 0.85);
-  min-width: 100%;
-  max-width: 1300px;
 }
 
 .logo {
@@ -12045,6 +12049,10 @@ h3,
 .h3 {
   font-family: "Rokkitt", serif;
   font-weight: bold;
+}
+
+h1, .h1 {
+  font-size: 1.5rem;
 }
 
 p,
@@ -12180,6 +12188,7 @@ input {
 
 .card {
   border-radius: 0;
+  min-height: fit-content !important;
 }
 
 .card img {
@@ -12242,15 +12251,18 @@ input {
 
 @media (max-width: 767.98px) {
   .logo {
-    width: 200px;
+    width: 160px;
+  }
+  .logo_div {
+    margin-left: 5% !important;
   }
   h1, .h1 {
-    font-size: 1rem;
+    font-size: 0.9rem !important;
   }
 }
 @media (max-width: 575.98px) {
   .xs-height {
-    height: 75% !important;
+    width: 95% !important;
   }
 }
 

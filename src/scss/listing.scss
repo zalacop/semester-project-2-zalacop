@@ -3,8 +3,14 @@ a {
     font-family: 'Poppins', sans-serif;
 }
 
+#view-listing {
+    max-width: 90%;
+}
+
 .product-container {
     max-width: 1050px;
+    min-width: 300px;
+    margin: 0 5% !important;
 }
 
 .main-img {
@@ -16,7 +22,7 @@ a {
 
 .images-gallery {
     max-width: 560px;
-    min-width: 320px;
+    min-width: 300px;
     border: 2px solid $info;
 }
 
@@ -49,7 +55,7 @@ img.active-img {
 
 .auction-info {
     max-width: 400px;
-    min-width: 320px;
+    min-width: 280px;
     height: max-content;
     border: 2px solid $primary;
 }

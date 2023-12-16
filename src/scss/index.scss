@@ -13,8 +13,6 @@ body {
 header,
 footer {
     background-color: $header-color;
-    min-width: 100%;
-    max-width: 1300px;
 }
 
 .logo {
@@ -26,6 +24,10 @@ h2,
 h3 {
     font-family: 'Rokkitt', serif;
     font-weight: bold;
+}
+
+h1 {
+    font-size: 1.5rem;
 }
 
 p,
@@ -159,6 +161,7 @@ input {
 
 .card {
     border-radius: 0;
+    min-height: fit-content !important;
 }
 
 .card img {
@@ -221,16 +224,20 @@ input {
 
 @media (max-width: 767.98px) {
     .logo {
-        width: 200px;
+        width: 160px;
+    }
+
+    .logo_div {
+        margin-left: 5% !important;
     }
 
     h1 {
-        font-size: 1rem;
+        font-size: 0.9rem !important;
     }
 }
 
 @media (max-width: 575.98px) {
     .xs-height {
-        height: 75% !important;
+        width: 95% !important;
     }
 }

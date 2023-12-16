@@ -1,9 +1,9 @@
 export default function createUnregisteredHeader() {
     const header = document.querySelector('header');
-    header.classList.add("container", "d-flex", "justify-content-between", "align-items-center", "px-5", "w-100");
+    header.classList.add("d-flex", "justify-content-between", "align-items-center", "px-md-5", "px-xs-2", "w-100");
 
     const logoDiv = document.createElement('div');
-    logoDiv.classList.add("m-3", "mt-4");
+    logoDiv.classList.add("m-3", "mt-4", "logo_div");
 
     const homeLink = document.createElement('a');
     homeLink.href = '/index.html';
@@ -14,7 +14,6 @@ export default function createUnregisteredHeader() {
     logo.classList.add("logo", "w-sm-50");
 
     const h1 = document.createElement('h1');
-    h1.classList.add("fs-5");
     h1.innerText = "Madness Unleashed, Hatter's Style, Your Smile!";
 
     homeLink.appendChild(logo);

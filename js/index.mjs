@@ -33,8 +33,10 @@ displayButton();
 displayListings();
 
 const search = document.querySelector("#search");
+const searchIcon = document.querySelector(".fa-magnifying-glass");
 
 search.addEventListener("keypress", () => displayFilteredListings(search.value));
+searchIcon.addEventListener("click", () => displayFilteredListings(search.value));
 
 const activeMobileListings = document.querySelector("#active-mobile");
 const watchMobileListings = document.querySelector("#watch-mobile");

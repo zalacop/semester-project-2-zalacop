@@ -2,7 +2,9 @@
 
 ## Mad Bids
 
-This is an auction website created for a school assignment, where users can search through listings whether they are logged in or not. If logged in, they can view the bid history on a listing, bid on a listing, create a new listing, and change their avatar image. Upon registration, users are given 1000 credits that they can use to bid on listings, and they can get credits by selling items.
+![image of homepage](/images/Mad_Bids_homepage.png)
+
+This is an auction website created for a school assignment, where users can search through listings whether they are logged in or not. If logged in, they can view the bid history on a listing, bid on a listing, create a new listing, and change their avatar image. Upon registration, users are given 1000 credits that they can use to bid on items, and they can get credits by selling items.
 
 Mad Bids is an auction website for a wide range of people who share common interest in the unconventional, the creative, and the unexpected. We're all mad here! Madness Unleashed, Hatter's Style, Your Smile!
 
@@ -10,10 +12,10 @@ Mad Bids is an auction website for a wide range of people who share common inter
 
 - Registration is only possible with @noroff.no or @stud.noroff.no email addresses,
 - Log in with a registered user,
-- Filter posts on the feed page,
+- Filter listings on the feed page,
 - Create a new listing and delete said listing,
 - View a single listing,
-- Search all listings by titles,
+- Search listings by titles,
 - Update an avatar,
 - Bid on a listing,
 - View total credits,

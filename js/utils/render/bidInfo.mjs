@@ -36,7 +36,7 @@ export default function createBidInfoCard(info) {
         const highestBidAmount = Math.max(...info.bids.map(bid => bid.amount));
         const currentBidAmount = highestBidAmount;
 
-        currentAmount.innerText = "Current Bid: " + currentBidAmount + " kr";
+        currentAmount.innerText = "Current Bid: " + currentBidAmount;
     } 
     currentBidDiv.appendChild(currentAmount);
 
@@ -69,17 +69,12 @@ export default function createBidInfoCard(info) {
     bidInput.type = "text";
     bidInput.classList.add("w-25", "bid-value");
     
-    const bidCurrency = document.createElement("p");
-    bidCurrency.classList.add("fs-5", "bold", "my-auto");
-    bidCurrency.innerText = "kr";
-    
     const bidButton = document.createElement("button");
     bidButton.classList.add("btn", "btn-outline-dark", "px-4", "py-1", "fs-6", "cta");
     bidButton.id = "bid-button";
     bidButton.innerText = "Bid Now";
     
     bidFlex.appendChild(bidInput);
-    bidFlex.appendChild(bidCurrency);
     bidFlex.appendChild(bidButton);
     
     bidInputDiv.appendChild(bidFlex);
